@@ -32,7 +32,7 @@ class User{
 
 
     public function login(string $email, string $password):void{
-        $connection=$this->getConnection();
+        $connection=getConnection();
         $query="SELECT * FROM users WHERE email=:email AND password=:password AND deleted=0";
         $statement=$connection->prepare($query);
         $data=["email"=>$email, "password"=>md5($password)];
@@ -63,13 +63,7 @@ class User{
 
     }
 
-    public function getConnection(){
-        $db_username="root";
-        $db_password="";
-        $db_name="webshop";
-        $db_server="localhost:3308";
-        return new PDO("mysql:host=$db_server;dbname=$db_name",$db_username,$db_password);
-    }
+
 
 
 
