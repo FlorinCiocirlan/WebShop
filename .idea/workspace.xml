@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="b62cad6f-da29-47dc-b130-fdebcf65db4d" name="Default Changelist" comment="" />
+    <list default="true" id="b62cad6f-da29-47dc-b130-fdebcf65db4d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,14 +30,19 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1iVRZtTfCrWauaS9UoizYHqCHJ8" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="ignore_missing_gitignore" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -37,7 +62,22 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
+    <state x="2155" y="172" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602079048256">
+      <screen x="1920" y="0" width="1280" height="1024" />
+    </state>
+    <state x="2155" y="172" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.988/1920.0.1280.1024@1920.0.1280.1024" timestamp="1602079048256" />
     <state x="2685" y="201" key="#com.intellij.ide.util.MemberChooser" timestamp="1601998796619">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -50,9 +90,14 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2715" y="443" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601998680832" />
-    <state x="2543" y="225" key="search.everywhere.popup" timestamp="1601996906704">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="794" y="289" width="321" height="462" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1602083026227">
+      <screen x="0" y="27" width="1920" height="988" />
+    </state>
+    <state x="794" y="289" width="321" height="462" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.27.1920.988/1920.0.1280.1024@0.27.1920.988" timestamp="1602083026227" />
+    <state x="2335" y="222" width="672" height="678" key="search.everywhere.popup" timestamp="1602079295778">
+      <screen x="1920" y="0" width="1280" height="1024" />
     </state>
     <state x="2543" y="225" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601996906704" />
+    <state x="2335" y="222" width="672" height="678" key="search.everywhere.popup/0.27.1920.988/1920.0.1280.1024@1920.0.1280.1024" timestamp="1602079295778" />
   </component>
 </project>
