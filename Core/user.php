@@ -6,12 +6,14 @@ require_once "../utils/utils.php";
 class User{
     private $id;
     private $name;
+    private $isAdmin;
 
 
     public function __construct(){
         if (isset($_SESSION['userID'])) {
             $this->id = $_SESSION['userID'];
             $this->name = $_SESSION['username'];
+            $this->isAdmin=$_SESSION['isAdmin'];
         }
     }
 
@@ -19,6 +21,11 @@ class User{
 
         if (!isset($this->id))
             header("Location: ../shop/login.php");
+    }
+    public function checkIfLoggedInAsAdmin():void{
+
+        if (!isset($this->id)||!($this->isAdmin))
+            header("Location: ../admin/login.php");
     }
 
     public function getID():int{
@@ -45,7 +52,11 @@ class User{
             $_SESSION['userID']=$this->id;
             $this->name=$resultset["name"];
             $_SESSION['username']=$this->name;
-            header("Location: ../shop/dashboard.php");
+            $this->isAdmin=($resultset["isadmin"]==0)?FALSE:TRUE;
+            if ($this->isAdmin)
+                header("Location: ../admin/dashboard.php");
+            else
+                header("Location: ../shop/dashboard.php");
         } else
             header("Location: ../shop/login.php");
     }
