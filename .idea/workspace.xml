@@ -19,16 +19,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
+
     <list default="true" id="b62cad6f-da29-47dc-b130-fdebcf65db4d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< HEAD
-=======
+
       <change beforePath="$PROJECT_DIR$/Core/Mailer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Mailer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop/checkout.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop/views/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop/views/checkout.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/utils.php" beforeDir="false" afterPath="$PROJECT_DIR$/utils/utils.php" afterDir="false" />
->>>>>>> sendEmail
+
     </list>
+
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,7 +58,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="ignore_missing_gitignore" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../tw3/symfonyCCB.v.2" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -108,24 +109,7 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="727" y="118" width="446" height="804" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1920.988/1920.0.1280.1024@0.27.1920.988" timestamp="1602143983843" />
-<<<<<<< HEAD
-    <state width="1291" height="257" key="GridCell.Tab.0.bottom" timestamp="1602178264742">
-      <screen x="0" y="27" width="3200" height="988" />
-    </state>
-    <state width="1291" height="257" key="GridCell.Tab.0.bottom/0.27.3200.988@0.27.3200.988" timestamp="1602178264742" />
-    <state width="1291" height="257" key="GridCell.Tab.0.center" timestamp="1602178264739">
-      <screen x="0" y="27" width="3200" height="988" />
-    </state>
-    <state width="1291" height="257" key="GridCell.Tab.0.center/0.27.3200.988@0.27.3200.988" timestamp="1602178264739" />
-    <state width="1291" height="257" key="GridCell.Tab.0.left" timestamp="1602178264736">
-      <screen x="0" y="27" width="3200" height="988" />
-    </state>
-    <state width="1291" height="257" key="GridCell.Tab.0.left/0.27.3200.988@0.27.3200.988" timestamp="1602178264736" />
-    <state width="1291" height="257" key="GridCell.Tab.0.right" timestamp="1602178264740">
-      <screen x="0" y="27" width="3200" height="988" />
-    </state>
-    <state width="1291" height="257" key="GridCell.Tab.0.right/0.27.3200.988@0.27.3200.988" timestamp="1602178264740" />
-=======
+
     <state width="622" height="214" key="GridCell.Tab.0.bottom" timestamp="1602168978239">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
@@ -142,38 +126,33 @@
       <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state width="622" height="214" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1602168978238" />
->>>>>>> sendEmail
+
     <state x="2711" y="242" key="NewPhpClassDialog" timestamp="1601996918562">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2711" y="242" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601996918562" />
-<<<<<<< HEAD
-    <state x="795" y="448" width="399" height="149" key="NewPhpFileDialog" timestamp="1602164401739">
-      <screen x="0" y="27" width="1920" height="988" />
-=======
+
     <state x="596" y="375" width="300" height="139" key="NewPhpFileDialog" timestamp="1602174138970">
       <screen x="0" y="23" width="1440" height="826" />
->>>>>>> sendEmail
+
     </state>
     <state x="2715" y="443" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601998680832" />
     <state x="596" y="375" width="300" height="139" key="NewPhpFileDialog/0.23.1440.826@0.23.1440.826" timestamp="1602174138970" />
     <state x="795" y="448" width="399" height="149" key="NewPhpFileDialog/0.27.1920.988/1920.0.1280.1024@0.27.1920.988" timestamp="1602142993127" />
-<<<<<<< HEAD
-    <state x="795" y="448" width="399" height="149" key="NewPhpFileDialog/0.27.1920.988@0.27.1920.988" timestamp="1602164401739" />
-    <state x="713" y="337" width="1000" height="480" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1602164144696">
-      <screen x="0" y="27" width="1920" height="988" />
-    </state>
-    <state x="713" y="337" width="1000" height="480" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/0.27.1920.988@0.27.1920.988" timestamp="1602164144696" />
-=======
+
     <state x="343" y="225" width="346" height="421" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1602159611240">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state x="343" y="225" width="346" height="421" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.23.1440.826@0.23.1440.826" timestamp="1602159611240" />
->>>>>>> sendEmail
+
     <state x="794" y="289" width="321" height="462" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1602083026227">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="794" y="289" width="321" height="462" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.27.1920.988/1920.0.1280.1024@0.27.1920.988" timestamp="1602083026227" />
+    <state x="624" y="237" key="run.anything.popup" timestamp="1602183051866">
+      <screen x="0" y="27" width="3200" height="988" />
+    </state>
+    <state x="624" y="237" key="run.anything.popup/0.27.3200.988@0.27.3200.988" timestamp="1602183051866" />
     <state x="2335" y="222" width="672" height="678" key="search.everywhere.popup" timestamp="1602079295778">
       <screen x="1920" y="0" width="1280" height="1024" />
     </state>
