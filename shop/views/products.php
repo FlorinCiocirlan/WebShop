@@ -59,14 +59,8 @@
 
     ?>
 </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 <?php paging("product",FALSE); ?>
-=======
-=======
->>>>>>> cart
-</div>
-<?php paging("product"); ?>
->>>>>>> e34bcf5088460bc63bdd9f942de3d51674dd841a
+
 </body>
 </html>
