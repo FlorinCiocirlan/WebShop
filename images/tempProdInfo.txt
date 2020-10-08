@@ -1,0 +1,26 @@
+1 - name - Galaxy Note20 Ultra
+    description - Samsung Galaxy Note20 Ultra is the best smart phone
+    category_id - 4 (smartphone)
+    brand - Samsung
+    stock - ?
+    price - 2.299 USD
+    image - images/1.jpg
+    deleted - 0
+
+2 - name - MacBook Air Retina 13
+    description - 16GB RAM, 128GB SSD, Gold - INT KB
+    category_id - ? (laptop)
+    brand - Apple
+    stock - 3
+    price - 1.599 USD
+    image - images/2.jpeg
+    deleted - 0
+
+3 - name - LG 50UN81006LB 50
+    description - Smart 4K Ultra HD HDR LED TV with Google Assistant & Amazon Alexa
+    category_id - 2 (tv)
+    brand - LG
+    stock - ?
+    price 699 USD
+    image - image/3.jpg
+    deleted - 0
