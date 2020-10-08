@@ -1,0 +1,33 @@
+.content > table {
+    border-color: darkmagenta;
+    border-style: solid;
+    border-width: thick;
+
+}
+
+.content {
+
+    width: 100%;
+    text-align: center;
+}
+.content table {
+    border-style: groove;
+    border-bottom-style: none;
+    border-right-style: none;
+    border-color: #F9F9F9;
+    border-width: thick;
+
+}
+.content td,th{
+    border-color: #F9F9F9;
+    border-bottom-style: groove;
+    border-right-style: groove;
+    border-width: thick;
+    text-align: center;
+
+}
+
+body{
+    background-color: #17a2b8;
+
+}

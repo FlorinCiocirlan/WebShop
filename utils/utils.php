@@ -2,10 +2,10 @@
 session_start();
 
 function getConnection():PDO{
-    $db_username="florin";
-    $db_password="123456";
+    $db_username="root";
+    $db_password="";
     $db_name="webshop";
-    $db_server="localhost:3306";
+    $db_server="localhost:3308";
     return new PDO("mysql:host=$db_server;dbname=$db_name",$db_username,$db_password);
 }
 
@@ -31,7 +31,7 @@ function addPagingInfoToQuery(string $query):string{
 }
 
 
-function paging(string $table):void{
+function paging(string $table, bool $includeDeleted):void{
 
     $originalLink=$_SERVER['REQUEST_URI'];
 
@@ -50,7 +50,11 @@ function paging(string $table):void{
 
 
     $connection=getConnection();
-    $query="SELECT COUNT(*) as n FROM $table";
+    if ($includeDeleted)
+        $query="SELECT COUNT(*) as n FROM $table";
+    else
+        $query="SELECT COUNT(*) as n FROM $table WHERE deleted=0";
+
     $statement=$connection->prepare($query);
     $statement->execute();
     $numberOfElements=$statement->fetch()["n"];

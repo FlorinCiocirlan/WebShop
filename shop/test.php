@@ -11,8 +11,8 @@ class TestController extends BaseController{
         //echo(md5("gica"));
        //$this->getUser()->login("adamalt@gmail.com","gica");
 
-        $this->getUser()->checkIfLoggedIn();
-
+        //$this->getUser()->checkIfLoggedIn();
+        $this->getUser()->logout();
         $this->templateData['test']="a fost odata ca in povesti";
 
         return "test";

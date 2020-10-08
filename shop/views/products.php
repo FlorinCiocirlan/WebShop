@@ -5,7 +5,7 @@
           integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <!-- End of Bootstrap components -->
 
-    <link rel="stylesheet" type="text/css" href="/static/css/custom.css"/>
+    <link rel="stylesheet" type="text/css" href="../Static/css/Custom.css"/>
 </head>
 <body>
 <h1> Products : </h1>
@@ -38,6 +38,6 @@
 
     ?>
 </div>
-<?php paging("product"); ?>
+<?php paging("product",FALSE); ?>
 </body>
 </html>

@@ -27,11 +27,14 @@ class User{
 
         if (!isset($this->id))
             header("Location: ../shop/login.php");
+            exit();
     }
     public function checkIfLoggedInAsAdmin():void{
 
-        if (!isset($this->id)||!($this->isAdmin))
-            header("Location: ../admin/login.php");
+        if (!isset($this->id)||!($this->isAdmin)) {
+            header("Location: ../shop/login.php");
+            exit();
+        }
     }
 
     public function getID():int{
@@ -58,6 +61,7 @@ class User{
             $this->name=$resultset["name"];
             $_SESSION['username']=$this->name;
             $this->isAdmin=($resultset["isadmin"]==0)?FALSE:TRUE;
+
             $_SESSION['isAdmin']=$this->isAdmin;
             if ($this->isAdmin)
                 header("Location: ../admin/dashboard.php");
@@ -65,6 +69,9 @@ class User{
                 header("Location: ../shop/dashboard.php");
         } else
             header("Location: ../shop/login.php");
+
+        exit();
+
     }
 
     public function logout():void{
@@ -80,6 +87,7 @@ class User{
         }
 
         header("Location: ../shop/login.php");
+        exit();
 
     }
 

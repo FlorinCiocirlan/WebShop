@@ -4,7 +4,7 @@
 <div><?=$test ?></div>
 
 <?php
-paging("users");
+paging("users", TRUE);
 ?>
 </body>
 </html>
