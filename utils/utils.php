@@ -1,11 +1,14 @@
 <?php
+    require 'DbConfig.php';
 session_start();
 
+
 function getConnection():PDO{
-    $db_username="pogar";
-    $db_password="bonfiscal706623";
-    $db_name="webshop";
-    $db_server="localhost:3306";
+    $credentials = getCredentials();
+    $db_username = $credentials['username'];
+    $db_password=$credentials['password'];
+    $db_name='webshop';
+    $db_server="localhost:".$credentials['port'];
     return new PDO("mysql:host=$db_server;dbname=$db_name",$db_username,$db_password);
 }
 
