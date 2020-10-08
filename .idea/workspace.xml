@@ -19,17 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-
     <list default="true" id="b62cad6f-da29-47dc-b130-fdebcf65db4d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-
-      <change beforePath="$PROJECT_DIR$/Core/Mailer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Mailer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop/checkout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/views/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop/views/checkout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/utils.php" beforeDir="false" afterPath="$PROJECT_DIR$/utils/utils.php" afterDir="false" />
-
+      <change beforePath="$PROJECT_DIR$/shop/views/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop/views/products.php" afterDir="false" />
     </list>
-
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -109,7 +102,6 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="727" y="118" width="446" height="804" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1920.988/1920.0.1280.1024@0.27.1920.988" timestamp="1602143983843" />
-
     <state width="622" height="214" key="GridCell.Tab.0.bottom" timestamp="1602168978239">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
@@ -126,25 +118,20 @@
       <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state width="622" height="214" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1602168978238" />
-
     <state x="2711" y="242" key="NewPhpClassDialog" timestamp="1601996918562">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2711" y="242" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601996918562" />
-
     <state x="596" y="375" width="300" height="139" key="NewPhpFileDialog" timestamp="1602174138970">
       <screen x="0" y="23" width="1440" height="826" />
-
     </state>
     <state x="2715" y="443" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601998680832" />
     <state x="596" y="375" width="300" height="139" key="NewPhpFileDialog/0.23.1440.826@0.23.1440.826" timestamp="1602174138970" />
     <state x="795" y="448" width="399" height="149" key="NewPhpFileDialog/0.27.1920.988/1920.0.1280.1024@0.27.1920.988" timestamp="1602142993127" />
-
     <state x="343" y="225" width="346" height="421" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1602159611240">
       <screen x="0" y="23" width="1440" height="826" />
     </state>
     <state x="343" y="225" width="346" height="421" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.23.1440.826@0.23.1440.826" timestamp="1602159611240" />
-
     <state x="794" y="289" width="321" height="462" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1602083026227">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
