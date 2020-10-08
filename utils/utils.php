@@ -56,7 +56,7 @@ function paging(string $table):void{
     //$numberOfElements=125;
     $numberOfPages=(int)(($numberOfElements+$elementsInPage-1) / $elementsInPage);
 
-    echo"<div>";
+    echo"<div style='text-align: center'>";
     for ($i=1;$i<=$numberOfPages;$i++){
         if ($i==$pageNumber)
             echo("<span>$i </span>");
