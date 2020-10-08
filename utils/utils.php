@@ -27,7 +27,7 @@ function registerUser(string $email , string $password){
 
 
 function addPagingInfoToQuery(string $query):string{
-    $elementsInPage=isset($_GET['epp'])?$_GET['epp']:10;
+    $elementsInPage=isset($_GET['epp'])?$_GET['epp']:9;
     $pageNumber=isset($_GET['pg'])?$_GET['pg']:1;
     $offset=($pageNumber-1)*$elementsInPage;
 
@@ -41,7 +41,7 @@ function paging(string $table, bool $includeDeleted):void{
     $originalLink=$_SERVER['REQUEST_URI'];
 
 
-    $elementsInPage=isset($_GET['epp'])?$_GET['epp']:10;
+    $elementsInPage=isset($_GET['epp'])?$_GET['epp']:9;
     if (!isset($_GET['pg'])){
         //echo("asd");
         $pageNumber = 1;
@@ -69,12 +69,12 @@ function paging(string $table, bool $includeDeleted):void{
     echo"<div style='text-align: center'>";
     for ($i=1;$i<=$numberOfPages;$i++){
         if ($i==$pageNumber)
-            echo("<span>$i </span>");
+            echo("<span style='padding: 10px'>$i </span>");
         else{
             $link=preg_replace("/pg=\d+/","pg=$i",$originalLink);
             //echo $originalLink;
 
-            echo("<span> <a href='".$link."'><u>$i</u></a> </span>");
+            echo("<span style='padding: 7px'> <a href='".$link."'><u>$i</u></a> </span>");
 
 
 
