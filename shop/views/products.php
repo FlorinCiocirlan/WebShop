@@ -9,6 +9,8 @@
 </head>
 <body>
 <h1> Products : </h1>
+<div class="container ">
+
 <div id="products" class="row">
 
     <?php
@@ -25,8 +27,8 @@
             $stock = 'last product in stock';
         }
         echo  ' <div class="col col-sm-12 col-md-6 col-lg-4"> 
-                    <div class="card" style=" width:450px;"> 
-                        <img class="card-img-top" style="height:400px; width:auto;" src="../images/'. $product["image"] .'" alt=""/> 
+                    <div class="card" style=" width:20rem;"> 
+                        <img class="card-img-top" style="height:20rem; width:auto;" src="../images/'. $product["image"] .'" alt=""/> 
                             <div class="card-header"> 
                                     <h4 class="card-title">Product name: '. $product["name"].'</h4>                                                                
                             </div>
@@ -46,6 +48,7 @@
 
 
     ?>
+</div>
 </div>
 <?php paging("product"); ?>
 </body>

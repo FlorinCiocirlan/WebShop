@@ -10,6 +10,7 @@
 </head>
 <body>
 <br> <br>
+<div class="container">
 <div>  <h1 style="text-align: center"> <?= $prod['prod']['name'] ?>   </h1>   <br></div><br><hr class="my-4"><br>
     <div class="row">
         <div class="col-sm ">
@@ -42,13 +43,13 @@
         </div>
     </div>
 </div>
+<div class="container">
 <hr class="my-4"><br>
 <h4> We also recommend you</h4>
 <div class="row">
    <?php
    foreach ( $prod['rand'] as $product )
    {
-
        echo  ' <div class="col col-sm-12 col-md-6 col-lg-4"> 
                     <div class="card" style=" width:200px;"> 
                         <img class="card-img-top" style="height:150px; width:auto;" src="../images/'. $product["image"] .'" alt=""/> 
@@ -64,19 +65,11 @@
                 </div>';
    }
 
-
-
-
    ?>
+</div>
 </div>
 </body>
 </html>
-
-
-
-
-
-<?php
 
 
 
