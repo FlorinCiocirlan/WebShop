@@ -99,4 +99,17 @@ function getCartDetails(int $userID){
     return $stmt->fetchAll();
 }
 
+function addOrder(array $orderDetails){
+    $pdo = getConnection();
+    $query = "INSERT INTO `order`(cart_id, user_id, payment_method, delivery_method, status) VALUES(:cartID, :userID, :payment, :delivery, :status)";
+    $stmt = $pdo->prepare($query);
+    return $stmt->execute([
+        ':cartID'=>$orderDetails['cartID'],
+        ':userID'=>$orderDetails['userID'],
+        ':payment'=>$orderDetails['payment'],
+        ':delivery'=>$orderDetails['delivery'],
+        ':status'=>$orderDetails['status']
+    ]);
+}
+
 

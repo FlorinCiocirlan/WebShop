@@ -22,11 +22,11 @@
         public function handlePost(): string
         {
             $orderDetails['userID'] = $this->getUser()->getID();
-            $orderDetails['cart_id'] = $_POST['cart_id'];
+            $orderDetails['cartID'] = $_POST['cart_id'];
             $orderDetails['payment_method'] = $_POST['payment'];
             $orderDetails['delivery_method'] = $_POST['delivery'];
-
-
+            $orderDetails['status'] = 'placed';
+            addOrder($orderDetails);
 
             $emailOrderDetails = getCartDetails($this->getUser()->getID());
 
