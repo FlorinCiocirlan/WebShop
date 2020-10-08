@@ -19,17 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-
     <list default="true" id="b62cad6f-da29-47dc-b130-fdebcf65db4d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-
-      <change beforePath="$PROJECT_DIR$/Core/Mailer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Mailer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop/checkout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/views/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop/views/checkout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layout/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/layout/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop/cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/views/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop/views/cart.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/utils.php" beforeDir="false" afterPath="$PROJECT_DIR$/utils/utils.php" afterDir="false" />
-
     </list>
-
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,7 +37,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -55,13 +51,22 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="ignore_missing_gitignore" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../tw3/symfonyCCB.v.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -75,6 +80,7 @@
       <workItem from="1602142228312" duration="2171000" />
       <workItem from="1602144922924" duration="6239000" />
       <workItem from="1602152707779" duration="2255000" />
+      <workItem from="1602173132516" duration="12489000" />
     </task>
     <servers />
   </component>
@@ -94,69 +100,43 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="264" y="162" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602159643993">
-      <screen x="0" y="23" width="1440" height="826" />
+    <state x="264" y="162" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602158842418">
+      <screen x="0" y="23" width="1440" height="828" />
     </state>
-    <state x="264" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.826@0.23.1440.826" timestamp="1602159643993" />
+    <state x="264" y="162" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.828@0.23.1440.828" timestamp="1602158842418" />
     <state x="2155" y="172" width="800" height="677" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.988/1920.0.1280.1024@1920.0.1280.1024" timestamp="1602079048256" />
-    <state x="574" y="183" width="393" height="534" key="#com.intellij.ide.util.MemberChooser" timestamp="1602161037027">
-      <screen x="0" y="23" width="1440" height="826" />
+    <state x="765" y="218" width="412" height="638" key="#com.intellij.ide.util.MemberChooser" timestamp="1602143075643">
+      <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="2685" y="201" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601998796619" />
-    <state x="574" y="183" width="393" height="534" key="#com.intellij.ide.util.MemberChooser/0.23.1440.826@0.23.1440.826" timestamp="1602161037027" />
     <state x="765" y="218" width="412" height="638" key="#com.intellij.ide.util.MemberChooser/0.27.1920.988/1920.0.1280.1024@0.27.1920.988" timestamp="1602143075643" />
     <state x="727" y="118" width="446" height="804" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1602143983843">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="727" y="118" width="446" height="804" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1920.988/1920.0.1280.1024@0.27.1920.988" timestamp="1602143983843" />
-
-    <state width="622" height="214" key="GridCell.Tab.0.bottom" timestamp="1602168978239">
-      <screen x="0" y="23" width="1440" height="826" />
+    <state x="458" y="190" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602186336707">
+      <screen x="0" y="23" width="1440" height="827" />
     </state>
-    <state width="622" height="214" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1602168978239" />
-    <state width="622" height="214" key="GridCell.Tab.0.center" timestamp="1602168978238">
-      <screen x="0" y="23" width="1440" height="826" />
-    </state>
-    <state width="622" height="214" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1602168978238" />
-    <state width="622" height="214" key="GridCell.Tab.0.left" timestamp="1602168978237">
-      <screen x="0" y="23" width="1440" height="826" />
-    </state>
-    <state width="622" height="214" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1602168978237" />
-    <state width="622" height="214" key="GridCell.Tab.0.right" timestamp="1602168978238">
-      <screen x="0" y="23" width="1440" height="826" />
-    </state>
-    <state width="622" height="214" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1602168978238" />
-
+    <state x="458" y="190" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.827@0.23.1440.827" timestamp="1602186336707" />
     <state x="2711" y="242" key="NewPhpClassDialog" timestamp="1601996918562">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2711" y="242" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601996918562" />
-
-    <state x="596" y="375" width="300" height="139" key="NewPhpFileDialog" timestamp="1602174138970">
-      <screen x="0" y="23" width="1440" height="826" />
-
+    <state x="596" y="375" width="300" height="147" key="NewPhpFileDialog" timestamp="1602188644706">
+      <screen x="0" y="23" width="1440" height="827" />
     </state>
     <state x="2715" y="443" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601998680832" />
-    <state x="596" y="375" width="300" height="139" key="NewPhpFileDialog/0.23.1440.826@0.23.1440.826" timestamp="1602174138970" />
+    <state x="596" y="375" width="300" height="147" key="NewPhpFileDialog/0.23.1440.827@0.23.1440.827" timestamp="1602188644706" />
     <state x="795" y="448" width="399" height="149" key="NewPhpFileDialog/0.27.1920.988/1920.0.1280.1024@0.27.1920.988" timestamp="1602142993127" />
-
-    <state x="343" y="225" width="346" height="421" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1602159611240">
-      <screen x="0" y="23" width="1440" height="826" />
-    </state>
-    <state x="343" y="225" width="346" height="421" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.23.1440.826@0.23.1440.826" timestamp="1602159611240" />
-
     <state x="794" y="289" width="321" height="462" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1602083026227">
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="794" y="289" width="321" height="462" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.27.1920.988/1920.0.1280.1024@0.27.1920.988" timestamp="1602083026227" />
-    <state x="624" y="237" key="run.anything.popup" timestamp="1602183051866">
-      <screen x="0" y="27" width="3200" height="988" />
-    </state>
-    <state x="624" y="237" key="run.anything.popup/0.27.3200.988@0.27.3200.988" timestamp="1602183051866" />
-    <state x="2335" y="222" width="672" height="678" key="search.everywhere.popup" timestamp="1602079295778">
-      <screen x="1920" y="0" width="1280" height="1024" />
+    <state x="467" y="202" width="756" height="548" key="search.everywhere.popup" timestamp="1602192200296">
+      <screen x="0" y="23" width="1440" height="827" />
     </state>
     <state x="2543" y="225" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601996906704" />
+    <state x="467" y="202" width="756" height="548" key="search.everywhere.popup/0.23.1440.827@0.23.1440.827" timestamp="1602192200296" />
     <state x="2335" y="222" width="672" height="678" key="search.everywhere.popup/0.27.1920.988/1920.0.1280.1024@1920.0.1280.1024" timestamp="1602079295778" />
   </component>
 </project>

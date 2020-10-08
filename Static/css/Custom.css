@@ -1,93 +1,159 @@
-.glyphicon {
-    margin-right: 5px;
+body{
+    margin: 0;
+    font-family: 'Roboto Mono for Powerline', sans-serif;
+    font-weight: 300;
 }
 
-.thumbnail {
-    margin-bottom: 20px;
-    padding: 0px;
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
-    border-radius: 0px;
+.navWrap{
+    width: 80%;
+    margin: 0 auto;
 }
 
-.thumbnail img {
-
-    width: 100px;
-    height: 100px;
+header{
+    background: #FAE1DF;
 }
 
-.item.list-group-item {
-    float: none;
-    width: 100%;
-    background-color: #fff;
-    margin-bottom: 10px;
-}
-
-.item.list-group-item:nth-of-type(odd):hover, .item.list-group-item:hover {
-    background: #428bca;
-}
-
-.item.list-group-item .list-group-image {
-    margin-right: 10px;
-}
-
-.item.list-group-item .thumbnail {
-    margin-bottom: 0px;
-}
-
-.item.list-group-item .caption {
-    padding: 9px 9px 0px 9px;
-}
-
-.item.list-group-item:nth-of-type(odd) {
-    background: #eeeeee;
-}
-
-.item.list-group-item:before, .item.list-group-item:after {
+header::after{
+    content: '';
     display: table;
-    content: " ";
-}
-
-.item.list-group-item img {
-    float: left;
-}
-
-.item.list-group-item:after {
     clear: both;
 }
 
-.list-group-item-text {
-    margin: 0 0 11px;
+.logo{
+    float: left;
+    padding: .6rem 0;
 }
 
-.filter {
-    margin: auto;
-    alignment: center;
-    horiz-align: center;
+nav{
+    float: right;
 }
 
-.card-header {
-
-
-}
-
-.filter-menu {
-    background-color: white;
-    color: black;
-    margin: auto;
-    margin-bottom: 60px;
-    alignment: center;
-    horiz-align: center;
-    align-content: center;
-}
-
-
-body {
+nav ul {
     margin: 0;
     padding: 0;
-    background-color: #17a2b8;
-    height: 100vh;
+    list-style: none;
 }
+
+nav ul li {
+    display: inline-block;
+    margin-left: 4.5rem;
+    padding-top: 1.5rem;
+    position: relative;
+}
+
+
+nav ul li a {
+    color: #0D1F2D;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+nav ul li a:hover {
+    color: #546A7B;
+    text-decoration: none;
+}
+
+nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background-color: #546A7B;
+    position: absolute;
+    top: 0;
+    width: 0;
+    transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before{
+    width: 100%;
+}
+
+.footer {
+    bottom: 0;
+    position: absolute;
+    width: 100vw;
+    display: block;
+    overflow: hidden;
+    padding: 70px 0;
+    box-sizing: border-box;
+    background-color: #0D1F2D;
+}
+.footer__inner {
+    display: block;
+    margin: 0 auto;
+    width: 1100px;
+    height: 100%;
+}
+.footer__inner .footer_third {
+    width: calc(21.6666666667% - 20px);
+    margin-right: 10px;
+    float: left;
+    height: 100%;
+}
+.footer__inner .footer_third:last-child {
+    margin-right: 0;
+}
+.footer__inner .footer_third h1 {
+    font-family: 'arial', serif;
+    font-size: 16px;
+    color: #FAE1DF;
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.footer__inner .footer_third a {
+    font-family: 'arial';
+    font-size: 12px;
+    font-weight: 200;
+    color: #FAE1DF;
+    display: block;
+    width: 100%;
+    padding-bottom: 5px;
+}
+.footer__inner .footer_third li {
+    display: inline-block;
+    padding: 0 5px;
+    font-size: 20px;
+}
+.footer__inner .footer_third span {
+    color: #FAE1DF;
+    font-family: 'arial';
+    font-size: 12px;
+    font-weight: 200;
+    display: block;
+    width: 100%;
+    padding-top: 20px;
+}
+.footer__logo-container {
+    width: 35%;
+    float: left;
+    height: 100%;
+    display: block;
+}
+.footer__logo-container img {
+    width: 10rem;
+    height: auto;
+}
+@media (max-width: 768px) {
+    .footer__inner {
+        width: 90%;
+    }
+    .footer__inner .footer_third {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .footer__logo-container {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}
+
+.pageContainer {
+    position: relative;
+    min-height: 100vh;
+}
+
+
 #login .container #login-row #login-column #login-box {
     margin-top: 120px;
     max-width: 600px;
@@ -103,5 +169,7 @@ body {
 }
 
 
-
+.contentWrap {
+    padding-bottom: 20rem;    /* Footer height */
+}
 

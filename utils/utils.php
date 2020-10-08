@@ -127,3 +127,17 @@ function addOrder(array $orderDetails){
 }
 
 
+
+function getByID(PDO $pdo, int $id){
+    $stmt = $pdo->prepare("SELECT c.id as cartId, c.status as castStatus, cp.product_id as productId, cp.quantity as prodQty,
+                                p.brand, p.description, p.image, p.name, p.price
+                                FROM cart c 
+                                join cart_product cp
+                                on c.id = cp.cart_id
+                                left join product p
+                                on cp.product_id = p.id
+                                WHERE c.user_id=:id");
+    $stmt->execute(['id' => $id]);
+    return  $stmt->fetchAll();
+}
+
