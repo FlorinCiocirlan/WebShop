@@ -7,7 +7,11 @@
 
         public function handleGet(): string
         {
-            return 'register';
+            if(!$this->getUser()->isLoggedIn()){
+                return 'register';
+            } else {
+                header("Location:/shop/products.php");
+            }
         }
 
         public function handlePost(): string
