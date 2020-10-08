@@ -6,13 +6,18 @@ class CartController extends BaseController{
 
     public function handleGet(): string
     {
-        $id = $_SESSION['userID'];
-        $pdo = getConnection();
-        $cart = getByID($pdo, $id);
-        $this->templateData['title']= 'Cart';
-        $this->templateData['cart']= $cart;
-        return "cart";
+        if(isset($_SESSION['userID'])) {
+            $id = $_SESSION['userID'];
+            $pdo = getConnection();
+            $cart = getByID($pdo, $id);
+            $this->templateData['title'] = 'Cart';
+            $this->templateData['cart'] = $cart;
+            return "cart";
+        }
 
+        $this->templateData['title'] = 'Cart';
+        $this->templateData['cart'] = '';
+        return "cart";
     }
 
     public function handlePost(): string

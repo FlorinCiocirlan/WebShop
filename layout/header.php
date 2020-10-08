@@ -4,11 +4,21 @@
         <img src="../images/eStoreLogo10.png" alt="logo" class="logo" >
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Pricing</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
+                <?php if(isset($_SESSION['userID']))
+                {
+                    echo '
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Cart</a></li>
+                    <li><a href="#">My Account</a></li>
+                    <li><a href="#">Logout</a></li>';
+                } else {
+                    echo '
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Register</a></li>';
+    } ?>
             </ul>
         </nav>
     </div>

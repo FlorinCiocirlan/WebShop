@@ -20,14 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b62cad6f-da29-47dc-b130-fdebcf65db4d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/images/eStoreLogo10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/layout/footer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Static/css/Custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/Static/css/Custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/ccbLOGO.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/layout/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/layout/head.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/layout/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/layout/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop/cart.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop/views/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop/views/cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/utils.php" beforeDir="false" afterPath="$PROJECT_DIR$/utils/utils.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +80,7 @@
       <workItem from="1602142228312" duration="2171000" />
       <workItem from="1602144922924" duration="6239000" />
       <workItem from="1602152707779" duration="2255000" />
-      <workItem from="1602173132516" duration="10158000" />
+      <workItem from="1602173132516" duration="12489000" />
     </task>
     <servers />
   </component>
@@ -135,10 +132,11 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="794" y="289" width="321" height="462" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.27.1920.988/1920.0.1280.1024@0.27.1920.988" timestamp="1602083026227" />
-    <state x="2335" y="222" width="672" height="678" key="search.everywhere.popup" timestamp="1602079295778">
-      <screen x="1920" y="0" width="1280" height="1024" />
+    <state x="467" y="202" width="756" height="548" key="search.everywhere.popup" timestamp="1602192200296">
+      <screen x="0" y="23" width="1440" height="827" />
     </state>
     <state x="2543" y="225" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601996906704" />
+    <state x="467" y="202" width="756" height="548" key="search.everywhere.popup/0.23.1440.827@0.23.1440.827" timestamp="1602192200296" />
     <state x="2335" y="222" width="672" height="678" key="search.everywhere.popup/0.27.1920.988/1920.0.1280.1024@1920.0.1280.1024" timestamp="1602079295778" />
   </component>
 </project>
