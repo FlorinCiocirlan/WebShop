@@ -1,27 +1,17 @@
-<html>
-<head>
-    <!-- Latest compiled and minified CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <!-- End of Bootstrap components -->
+<html lang="en">
+<?php require "../layout/header.php"?>
 
+<div class="container " style="margin-top: 25px">
 
-    <link rel="stylesheet" type="text/css" href="../Static/css/Custom.css"/>
+    <form action="products.php" method="post" class="form-inline">
 
-</head>
-<body>
-<h1> Products : </h1>
-<div class="container ">
-    <div class="card-header">
-    <form action="products.php" method="post">
-        <div class="row">
         <input class="form-control col-8" type="text" placeholder="Looking for a product?" name="searchValue">
-        <button class="col-4 btn btn-info" type="submit"> Submit </button>
-        </div>
-    </form>
-    </div>
 
-<div id="products" class="row">
+        <button class="col-4 btn btn-info"  type="submit"> Submit </button>
+    </form>
+
+
+<div id="products" class="row" >
 
     <?php
 
@@ -62,5 +52,6 @@
 
 <?php paging("product",FALSE); ?>
 
-</body>
+    <?php require "../layout/footer.php" ?>
+
 </html>
