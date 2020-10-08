@@ -47,7 +47,6 @@ class User{
         $resultset=$statement->fetch();
 
         if ($resultset){
-            var_dump($resultset);
             $this->id=$resultset["id"];
             $_SESSION['userID']=$this->id;
             $this->name=$resultset["name"];

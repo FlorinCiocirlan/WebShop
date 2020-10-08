@@ -9,12 +9,16 @@ function getConnection():PDO{
 }
 
 function registerUser(string $email , string $password){
+    if(getUserByEmail($email)){
+        return false;
+    }
     $pdo = getConnection();
     $query = 'INSERT INTO users(email,password,isadmin) VALUES(:email,:password,0);';
     $stmt = $pdo ->prepare($query);
     return $stmt->execute([':email'=>$email,':password'=>$password]);
 
 }
+
 
 function addPagingInfoToQuery(string $query):string{
     $elementsInPage=isset($_GET['epp'])?$_GET['epp']:10;
@@ -69,3 +73,13 @@ function paging(string $table):void{
     echo"</div>";
 
 }
+
+function getUserByEmail(string $email){
+    $pdo = getConnection();
+    $query = 'SELECT * FROM users WHERE email=:email';
+    $stmt = $pdo ->prepare($query);
+    $stmt->execute([':email'=>$email]);
+    return $stmt->fetch();
+}
+
+
