@@ -1,6 +1,7 @@
+<?php require "../layout/head.php" ?>
 <header>
     <div class="navWrap">
-        <img src="../images/ccbLOGO.png" alt="logo" class="logo" style="width: 50px">
+        <img src="../images/eStoreLogo10.png" alt="logo" class="logo" >
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>

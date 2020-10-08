@@ -20,21 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b62cad6f-da29-47dc-b130-fdebcf65db4d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/images/ccbLOGO.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/layout/head.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/layout/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e7d8c47f-f9cb-4c66-b268-7bc6967f3618.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e7d8c47f-f9cb-4c66-b268-7bc6967f3618/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/eStoreLogo10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/layout/footer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Static/css/Custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/Static/css/Custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop/cart.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/ccbLOGO.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/layout/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/layout/head.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/layout/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/layout/header.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop/views/cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop/views/cart.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/views/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop/views/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/views/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop/views/products.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/views/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop/views/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/views/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop/views/test.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +83,7 @@
       <workItem from="1602142228312" duration="2171000" />
       <workItem from="1602144922924" duration="6239000" />
       <workItem from="1602152707779" duration="2255000" />
-      <workItem from="1602173132516" duration="6357000" />
+      <workItem from="1602173132516" duration="10158000" />
     </task>
     <servers />
   </component>
@@ -124,15 +117,19 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="727" y="118" width="446" height="804" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1920.988/1920.0.1280.1024@0.27.1920.988" timestamp="1602143983843" />
+    <state x="458" y="190" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1602186336707">
+      <screen x="0" y="23" width="1440" height="827" />
+    </state>
+    <state x="458" y="190" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.827@0.23.1440.827" timestamp="1602186336707" />
     <state x="2711" y="242" key="NewPhpClassDialog" timestamp="1601996918562">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2711" y="242" key="NewPhpClassDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601996918562" />
-    <state x="596" y="375" width="300" height="147" key="NewPhpFileDialog" timestamp="1602176048397">
+    <state x="596" y="375" width="300" height="147" key="NewPhpFileDialog" timestamp="1602188644706">
       <screen x="0" y="23" width="1440" height="827" />
     </state>
     <state x="2715" y="443" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1601998680832" />
-    <state x="596" y="375" width="300" height="147" key="NewPhpFileDialog/0.23.1440.827@0.23.1440.827" timestamp="1602176048397" />
+    <state x="596" y="375" width="300" height="147" key="NewPhpFileDialog/0.23.1440.827@0.23.1440.827" timestamp="1602188644706" />
     <state x="795" y="448" width="399" height="149" key="NewPhpFileDialog/0.27.1920.988/1920.0.1280.1024@0.27.1920.988" timestamp="1602142993127" />
     <state x="794" y="289" width="321" height="462" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1602083026227">
       <screen x="0" y="27" width="1920" height="988" />

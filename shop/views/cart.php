@@ -1,10 +1,8 @@
 <html lang="en">
-<?php require "../layout/head.php"?>
-<body>
 <?php require "../layout/header.php"?>
-<div><?php var_dump($cart) ?></div>
 
+<div class="container" style="margin-top: 15px"><?php var_dump($cart) ?></div>
 
+<?php require "../layout/footer.php" ?>
 
-</body>
 </html>
