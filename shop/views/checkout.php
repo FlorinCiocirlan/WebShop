@@ -42,7 +42,7 @@
         </div>
         <hr class="mb-4">
         <input type="text" value="<?=$products[0]['cart_id'] ?>" name="cart_id" hidden>
-        <button class="btn btn-primary btn-sm btn-block" type="submit">Place Order</button>
+        <button class="btn btn-sm btn-block" type="submit" style="background-color: #546A7B;color:white">Place Order</button>
     </form>
     </div>
     <div class="col-md-8 order-md-2">
@@ -64,12 +64,10 @@
                     <small class="text-muted">'.$product['product_brand'].'</small>
                      ';
                  echo (int)$product['quantity'] > 1 ? '<small class="text-muted">'.$product['quantity'].' units'.'</small>' : '<small class="text-muted">'.$product['quantity'].' unit'.'</small>';
-//                    <span>'.(int)$product['quantity'] > 1 ? $product['quantity'].' units' : $product['quantity'].' unit'.'</span>
                     echo '<span class="text-muted">'.'$'.$product['product_price'].'</span>';
                    echo '</li>';
 
          }
-//                    <p>'.$product['product_description'].'</p>
          echo '<li class="list-group-item d-flex justify-content-between">
                     <span>Total (USD)</span>
                     <strong> '.'$'.$total.'</strong>
