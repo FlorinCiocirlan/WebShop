@@ -66,7 +66,7 @@ class User{
             if ($this->isAdmin)
                 header("Location: ../admin/dashboard.php");
             else
-                header("Location: ../shop/dashboard.php");
+                header("Location: ../shop/products.php");
         } else
             header("Location: ../shop/login.php");
 
