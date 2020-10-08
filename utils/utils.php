@@ -1,11 +1,14 @@
 <?php
+    require 'DbConfig.php';
 session_start();
 
+
 function getConnection():PDO{
-    $db_username="pogar";
-    $db_password="bonfiscal706623";
-    $db_name="webshop";
-    $db_server="localhost:3306";
+    $credentials = getCredentials();
+    $db_username = $credentials['username'];
+    $db_password=$credentials['password'];
+    $db_name='webshop';
+    $db_server="localhost:".$credentials['port'];
     return new PDO("mysql:host=$db_server;dbname=$db_name",$db_username,$db_password);
 }
 
@@ -81,6 +84,40 @@ function getUserByEmail(string $email){
     $stmt = $pdo ->prepare($query);
     $stmt->execute([':email'=>$email]);
     return $stmt->fetch();
+}
+
+function getUserById(int $id){
+    $pdo = getConnection();
+    $query = 'SELECT * FROM users WHERE id=:id';
+    $stmt = $pdo ->prepare($query);
+    $stmt->execute([':id'=>$id]);
+    return $stmt->fetch();
+}
+
+function getCartDetails(int $userID){
+    $pdo = getConnection();
+    $query = 'SELECT cart.status as cart_status, cart.id as cart_id, 
+       cp.product_id, cp.quantity,
+       p.name as product_name,
+       p.category_name as product_category,
+       p.description as product_description, p.brand as product_brand, p.price as product_price, p.image as product_image
+        FROM cart JOIN cart_product cp on cart.id = cp.cart_id JOIN product p on cp.product_id = p.id  WHERE user_id=:userID;';
+    $stmt = $pdo->prepare($query);
+    $stmt->execute([':userID'=>$userID]);
+    return $stmt->fetchAll();
+}
+
+function addOrder(array $orderDetails){
+    $pdo = getConnection();
+    $query = "INSERT INTO `order`(cart_id, user_id, payment_method, delivery_method, status) VALUES(:cartID, :userID, :payment, :delivery, :status)";
+    $stmt = $pdo->prepare($query);
+    return $stmt->execute([
+        ':cartID'=>$orderDetails['cartID'],
+        ':userID'=>$orderDetails['userID'],
+        ':payment'=>$orderDetails['payment'],
+        ':delivery'=>$orderDetails['delivery'],
+        ':status'=>$orderDetails['status']
+    ]);
 }
 
 
