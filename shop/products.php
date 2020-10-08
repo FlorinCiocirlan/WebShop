@@ -9,15 +9,10 @@ class ProductsController extends BaseController
     public function handleGet(): string
     {
 
-        $as ='ceva';
-        $prod = "Acesta este products conroler";
-         $ds = $this->getAllProducts();
-        $this->templateData['prod'] = ['as'=> $as, "prod"=>$ds];
-
-
+        $products = $this->getAllProducts();
+        $this->templateData['prod'] = [ "prod"=>$products];
 
         return "products";
-
     }
 
 
@@ -29,7 +24,7 @@ class ProductsController extends BaseController
     public function getAllProducts():array
     {
         $connection = getConnection();
-        $query = addPagingInfoToQuery("SELECT * FROM product");
+        $query = addPagingInfoToQuery("SELECT * FROM product WHERE deleted=0");
         //echo ($query);
         $statement = $connection->prepare($query);
         $statement->execute();

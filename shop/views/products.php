@@ -15,6 +15,15 @@
 
     foreach ( $prod['prod'] as $product )
     {
+        $color = 'green';
+        $stock = 'in stock';
+        if($product['stock'] <= 0 ){
+            $color = 'red';
+            $stock = 'out of stock';
+        } elseif ($product['stock'] == 1){
+            $color = 'orange';
+            $stock = 'last product in stock';
+        }
         echo  ' <div class="col col-sm-12 col-md-6 col-lg-4"> 
                     <div class="card" style=" width:450px;"> 
                         <img class="card-img-top" style="height:400px; width:auto;" src="../images/'. $product["image"] .'" alt=""/> 
@@ -23,15 +32,15 @@
                             </div>
                                <div class="card-body">
                                   <div class="card-text">
-                                   <p class="card-text"> '.$product["brand"]  .'   </p>
-                                          <p class="lead" >Price: '.$product["price"] .' USD</p>                                
+                                   <p class="card-text" style="text-align: center; color: '.$color .'">'.$stock  .'   </p>
+                                    <p class="lead"  style="text-align: center;" >Price: '.$product["price"] .' USD</p>                                
                                   </div>
-                                  <div class="card-text">
+                                  <div class="card-text" style="text-align: center;">
                  <a class="btn btn-success" href="#">Add to cart</a>    
-                 <a class="btn btn-primary" href="#"> Details </a>                
+                 <a class="btn btn-primary" href="/shop/product.php?id='.$product['id'] .'"> Details </a>                
                                     </div>
                                </div> 
-                    </div>
+                    </div> <br>
                 </div>';
     }
 
