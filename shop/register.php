@@ -12,19 +12,17 @@
 
         public function handlePost(): string
         {
-            try{
+
             $email = $_POST['email'];
             $password = md5($_POST['password']);
-            registerUser($email,$password);
-            $this->templateData['feedBack'] = "You successfully registered";
-            $this->templateData['color'] = "green";
-            return 'login';
-        } catch (Exception $e){
+            if(registerUser($email,$password)){
+                $this->templateData['feedBack'] = "You successfully registered";
+                $this->templateData['color'] = "green";
+            } else {
                 $this->templateData['feedBack'] = "You already have an account";
                 $this->templateData['color'] = 'red';
-                return 'login';
             }
-
+                return 'login';
         }
     }
 

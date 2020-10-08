@@ -12,6 +12,7 @@ function registerUser(string $email , string $password){
     $pdo = getConnection();
     $query = 'INSERT INTO users(email,password,isadmin) VALUES(:email,:password,0);';
     $stmt = $pdo ->prepare($query);
-    $stmt->execute([':email'=>$email,':password'=>$password]);
+    return $stmt->execute([':email'=>$email,':password'=>$password]);
+
 }
 
