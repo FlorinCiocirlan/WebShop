@@ -83,4 +83,12 @@ function getUserByEmail(string $email){
     return $stmt->fetch();
 }
 
+function getUserById(int $id){
+    $pdo = getConnection();
+    $query = 'SELECT * FROM users WHERE id=:id';
+    $stmt = $pdo ->prepare($query);
+    $stmt->execute([':id'=>$id]);
+    return $stmt->fetch();
+}
+
 
