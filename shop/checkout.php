@@ -10,6 +10,9 @@
             $this->templateData['name'] = $userDetails['name'];
             $this->templateData['address'] = $userDetails['address'];
             $this->templateData['phone'] = $userDetails['phone'];
+
+            $cartDetails = getCartDetails($this->getUser()->getID());
+            $this->templateData['products'] = $cartDetails;
             return 'checkout';
             } else {
                 header('Location : /shop/login.php ');
@@ -18,7 +21,22 @@
 
         public function handlePost(): string
         {
-            // TODO: Implement handlePost() method.
+            $orderDetails['userID'] = $this->getUser()->getID();
+            $orderDetails['cart_id'] = $_POST['cart_id'];
+            $orderDetails['payment_method'] = $_POST['payment'];
+            $orderDetails['delivery_method'] = $_POST['delivery'];
+
+
+
+            $emailOrderDetails = getCartDetails($this->getUser()->getID());
+
+            $emailUserInfoDetails['name'] = $_POST['name'];
+            $emailUserInfoDetails['address'] = $_POST['address'];
+            $emailUserInfoDetails['phone'] = $_POST['phone'];
+            $emailUserInfoDetails['delivery'] = $_POST['delivery'];
+            $emailUserInfoDetails['payment'] = $_POST['payment'];
+
+
         }
     }
 

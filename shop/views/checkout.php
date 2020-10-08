@@ -37,11 +37,31 @@
             <option selected name="cash">Cash</option>
         </select>
         </div>
+        <input type="text" value="<?=$products[0]['cart_id'] ?>" name="cart_id" hidden>
         <button class="btn btn-sm btn-info " type="submit">Place Order</button>
     </form>
     </div>
     <div class="col-sm">
-
+    <div class="productsContainer">
+        <?php
+//            var_dump($products);
+//            die();
+            $total = 0;
+         foreach ($products as $product){
+             $total += (int)$product['quantity'] * (int)$product['product_price'];
+             echo '<div class="productDiv">
+                    <span><img src="../../images/'.$product['product_image'].'" alt="product image" height="50" width="50"></span>
+                    <span>'.$product['product_name'].'</span>
+                    <span>'.$product['product_category'].'</span>
+                    <span>'.$product['product_brand'].'</span>
+                    <span>'.$product['quantity'].'</span>
+                    <span>'.$product['product_price'].'</span>
+                    <p>'.$product['product_description'].'</p>
+            </div>';
+         }
+         echo '<div class="totalCost">'.$total.' USD'.'</div>'
+        ?>
+    </div>
     </div>
     </div>
 </div>

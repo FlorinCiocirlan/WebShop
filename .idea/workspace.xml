@@ -20,10 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b62cad6f-da29-47dc-b130-fdebcf65db4d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e7d8c47f-f9cb-4c66-b268-7bc6967f3618.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/e7d8c47f-f9cb-4c66-b268-7bc6967f3618.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop/checkout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/views/checkout.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop/views/checkout.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/utils.php" beforeDir="false" afterPath="$PROJECT_DIR$/utils/utils.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,6 +97,22 @@
       <screen x="0" y="27" width="1920" height="988" />
     </state>
     <state x="727" y="118" width="446" height="804" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1920.988/1920.0.1280.1024@0.27.1920.988" timestamp="1602143983843" />
+    <state width="622" height="214" key="GridCell.Tab.0.bottom" timestamp="1602167108102">
+      <screen x="0" y="23" width="1440" height="826" />
+    </state>
+    <state width="622" height="214" key="GridCell.Tab.0.bottom/0.23.1440.826@0.23.1440.826" timestamp="1602167108102" />
+    <state width="622" height="214" key="GridCell.Tab.0.center" timestamp="1602167108101">
+      <screen x="0" y="23" width="1440" height="826" />
+    </state>
+    <state width="622" height="214" key="GridCell.Tab.0.center/0.23.1440.826@0.23.1440.826" timestamp="1602167108101" />
+    <state width="622" height="214" key="GridCell.Tab.0.left" timestamp="1602167108100">
+      <screen x="0" y="23" width="1440" height="826" />
+    </state>
+    <state width="622" height="214" key="GridCell.Tab.0.left/0.23.1440.826@0.23.1440.826" timestamp="1602167108100" />
+    <state width="622" height="214" key="GridCell.Tab.0.right" timestamp="1602167108101">
+      <screen x="0" y="23" width="1440" height="826" />
+    </state>
+    <state width="622" height="214" key="GridCell.Tab.0.right/0.23.1440.826@0.23.1440.826" timestamp="1602167108101" />
     <state x="2711" y="242" key="NewPhpClassDialog" timestamp="1601996918562">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
