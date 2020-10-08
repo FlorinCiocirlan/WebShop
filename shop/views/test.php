@@ -1,4 +1,5 @@
 <html>
+<?php require "../layout/head.php"?>
 <body>
 
 <div><?=$test ?></div>

@@ -6,10 +6,10 @@ class CartController extends BaseController{
 
     public function handleGet(): string
     {
-        session_start();
         $id = $_SESSION['userID'];
         $pdo = getConnection();
         $cart = getByID($pdo, $id);
+        $this->templateData['title']= 'Cart';
         $this->templateData['cart']= $cart;
         return "cart";
 
