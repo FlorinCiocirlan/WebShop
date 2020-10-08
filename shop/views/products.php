@@ -5,12 +5,19 @@
           integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <!-- End of Bootstrap components -->
 
-    <link rel="stylesheet" type="text/css" href="/static/css/custom.css"/>
+    <link rel="stylesheet" type="text/css" href="/Static/css/Csustom.css"/>
 </head>
 <body>
 <h1> Products : </h1>
 <div class="container ">
-
+    <div class="card-header">
+    <form action="products.php" method="post">
+        <div class="row">
+        <input class="form-control col-8" type="text" placeholder="Looking for a product?" name="searchValue">
+        <button class="col-4 btn btn-info" type="submit"> Submit </button>
+        </div>
+    </form>
+    </div>
 <div id="products" class="row">
 
     <?php
