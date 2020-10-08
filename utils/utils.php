@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 function getConnection():PDO{
     $db_username="root";

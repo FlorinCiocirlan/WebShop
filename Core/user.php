@@ -17,6 +17,12 @@ class User{
         }
     }
 
+    public function isLoggedIn(){
+
+        return (isset($this->id));
+
+    }
+
     public function checkIfLoggedIn():void{
 
         if (!isset($this->id))
@@ -52,6 +58,7 @@ class User{
             $this->name=$resultset["name"];
             $_SESSION['username']=$this->name;
             $this->isAdmin=($resultset["isadmin"]==0)?FALSE:TRUE;
+            $_SESSION['isAdmin']=$this->isAdmin;
             if ($this->isAdmin)
                 header("Location: ../admin/dashboard.php");
             else
@@ -64,8 +71,11 @@ class User{
         if (isset($this->id)){
             unset($this->id);
             unset($this->name);
+            unset($this->isAdmin);
+
             unset($_SESSION["userID"]);
             unset($_SESSION["username"]);
+            unset($_SESSION["isAdmin"]);
 
         }
 
