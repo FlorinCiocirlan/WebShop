@@ -96,9 +96,9 @@ function getCartDetails(int $userID){
     $query = 'SELECT cart.status as cart_status, cart.id as cart_id, 
        cp.product_id, cp.quantity,
        p.name as product_name,
-       c.name as product_category,
+       p.category_name as product_category,
        p.description as product_description, p.brand as product_brand, p.price as product_price, p.image as product_image
-        FROM cart JOIN cart_product cp on cart.id = cp.cart_id JOIN product p on cp.product_id = p.id JOIN category c on p.category_id = c.id WHERE user_id=:userID;';
+        FROM cart JOIN cart_product cp on cart.id = cp.cart_id JOIN product p on cp.product_id = p.id  WHERE user_id=:userID;';
     $stmt = $pdo->prepare($query);
     $stmt->execute([':userID'=>$userID]);
     return $stmt->fetchAll();
