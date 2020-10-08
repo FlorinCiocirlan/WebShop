@@ -2,10 +2,10 @@
 session_start();
 
 function getConnection():PDO{
-    $db_username="root";
-    $db_password="";
+    $db_username="durlesteanu";
+    $db_password="1234567890";
     $db_name="webshop";
-    $db_server="localhost:3308";
+    $db_server="localhost:3306";
     return new PDO("mysql:host=$db_server;dbname=$db_name",$db_username,$db_password);
 }
 
@@ -83,4 +83,11 @@ function getUserByEmail(string $email){
     return $stmt->fetch();
 }
 
+
+
+function getByID(PDO $pdo, int $id){
+    $stmt = $pdo->prepare("SELECT * FROM cart WHERE id=:id");
+    $stmt->execute(['id' => $id]);
+    return  $stmt->fetch();
+}
 
