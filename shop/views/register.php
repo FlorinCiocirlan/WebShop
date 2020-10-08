@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Register</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script rel="script" src="../../Static/js/register.js" defer ></script>
 </head>
 <body>
     <div class="container">
@@ -24,7 +25,7 @@
                 <label for="confirmPassword">Confirm Password</label>
                 <input name="confirmPassword" type="password" class="form-control" id="confirmPassword" required>
             </div>
-            <button type="submit" class="btn btn-sm" style="background-color: #9EA3B0; color: black;">Sign Up</button>
+            <button id="submitBtn" type="submit" class="btn btn-sm" style="background-color: #9EA3B0; color: black;">Sign Up</button>
         </form>
     </div>
 
