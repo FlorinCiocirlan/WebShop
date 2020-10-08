@@ -4,7 +4,11 @@
 
         public function handleGet(): string
         {
-           return 'login';
+            if(!$this->getUser()->isLoggedIn()){
+                return 'login';
+            } else {
+            header('Location:/shop/products.php');
+            }
         }
 
         public function handlePost(): string

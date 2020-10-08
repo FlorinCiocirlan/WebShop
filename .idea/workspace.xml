@@ -20,9 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b62cad6f-da29-47dc-b130-fdebcf65db4d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/Core/user.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/test.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop/test.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop/register.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/utils.php" beforeDir="false" afterPath="$PROJECT_DIR$/utils/utils.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
