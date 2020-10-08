@@ -9,57 +9,72 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-<div class="content">
+<div class="container mt-3">
     <div class="row">
-    <div class="col-4 border rounded">
+    <div class="col-md-4 order-md-1 mb-4">
+        <h4 class="mb-3">Billing address</h4>
     <form action="../shop/checkout.php" method="post">
         <div class="form-group">
         <label for="name">Name</label>
-        <input class="form-control" type="text" id="name" name="name" value="<?=$name?>" required>
+        <input class="form-control form-control-sm" type="text" id="name" name="name" value="<?=$name?>" required>
             </div>
         <div class="form-group">
         <label for="address">Address</label>
-        <input class="form-control" type="text" id="address" name="adress" value="<?=$address?>" required>
+        <input class="form-control form-control-sm" type="text" id="address" name="adress" value="<?=$address?>" required>
         </div>
         <div class="form-group">
         <label for="phone">Phone Number</label>
-        <input class="form-control" type="text" id="phone" name="phone" value="<?=$phone?>" required>
+        <input class="form-control form-control-sm" type="text" id="phone" name="phone" value="<?=$phone?>" required>
         </div>
-        <label for="delivery">Delivery Method</label>
-        <select class="form-control" id="delivery" name="delivery" required>
+        <hr class="mb-4">
+        <label for="delivery">Delivery</label>
+        <select class="form-control form-control-sm" id="delivery" name="delivery" required>
             <option name="dhl">DHL Express (15.99 USD)</option>
             <option name="post">Local Post (5.99 USD)</option>
             <option name="pickUp">Pick up from location (Free)</option>
         </select>
-        <label for="payment"> Payment Method</label>
+        <hr class="mb-4">
+        <label for="payment"> Payment</label>
         <div class="form-group">
-        <select class="form-control" id="payment" name="payment" required>
-            <option selected name="cash">Cash</option>
+        <select class="form-control form-control-sm" id="payment" name="payment" required>
+            <option name="cash">Cash</option>
         </select>
         </div>
+        <hr class="mb-4">
         <input type="text" value="<?=$products[0]['cart_id'] ?>" name="cart_id" hidden>
-        <button class="btn btn-sm btn-info " type="submit">Place Order</button>
+        <button class="btn btn-primary btn-sm btn-block" type="submit">Place Order</button>
     </form>
     </div>
-    <div class="col-sm">
+    <div class="col-md-8 order-md-2">
     <div class="productsContainer">
         <?php
-//            var_dump($products);
-//            die();
+            echo '<h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">Your cart</span>
+            <span class="badge badge-secondary badge-pill">'.count($products).'</span>
+</h4>';
             $total = 0;
+            echo '<ul class="list-group mb-3">';
          foreach ($products as $product){
              $total += (int)$product['quantity'] * (int)$product['product_price'];
-             echo '<div class="productDiv">
+             echo '
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
                     <span><img src="../../images/'.$product['product_image'].'" alt="product image" height="50" width="50"></span>
-                    <span>'.$product['product_name'].'</span>
-                    <span>'.$product['product_category'].'</span>
-                    <span>'.$product['product_brand'].'</span>
-                    <span>'.$product['quantity'].'</span>
-                    <span>'.$product['product_price'].'</span>
-                    <p>'.$product['product_description'].'</p>
-            </div>';
+                    <span>'.$product['product_name'].'</span>                  
+                    <small class="text-muted">'.$product['product_category'].'</small>
+                    <small class="text-muted">'.$product['product_brand'].'</small>
+                     ';
+                 echo (int)$product['quantity'] > 1 ? '<small class="text-muted">'.$product['quantity'].' units'.'</small>' : '<small class="text-muted">'.$product['quantity'].' unit'.'</small>';
+//                    <span>'.(int)$product['quantity'] > 1 ? $product['quantity'].' units' : $product['quantity'].' unit'.'</span>
+                    echo '<span class="text-muted">'.'$'.$product['product_price'].'</span>';
+                   echo '</li>';
+
          }
-         echo '<div class="totalCost">'.$total.' USD'.'</div>'
+//                    <p>'.$product['product_description'].'</p>
+         echo '<li class="list-group-item d-flex justify-content-between">
+                    <span>Total (USD)</span>
+                    <strong> '.'$'.$total.'</strong>
+             </li>';
+         echo '</ul>';
         ?>
     </div>
     </div>
