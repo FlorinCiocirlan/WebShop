@@ -29,10 +29,10 @@
             <?php
             $color = 'green';
             $stock = 'in stock';
-            if($prod['stock'] <= 0 ){
+            if($prod['prod']['stock'] <= 0 ){
                 $color = 'red';
                 $stock = 'out of stock';
-            } elseif ($prod['stock'] == 1){
+            } elseif ($prod['prod']['stock'] == 1){
                 $color = 'orange';
                 $stock = 'last product in stock';
             } ?>
