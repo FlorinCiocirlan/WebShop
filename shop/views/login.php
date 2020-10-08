@@ -9,7 +9,7 @@
 </head>
 <body>
 <?php
-    if ($color && $feedBack){
+    if (isset($color) && isset($feedBack)){
         echo '<p style="color:'.$color.'">'.$feedBack.'</p>';
     }
 ?>
