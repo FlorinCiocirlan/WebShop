@@ -13,7 +13,7 @@
         echo '<p style="color:'.$color.'">'.$feedBack.'</p>';
     }
 ?>
-<form method="post" action="../shop/login">
+<form method="post" action="../shop/login.php">
     <label for="email">Email</label>
     <input type="email" name="email" id="email">
     <label for="password"></label>
