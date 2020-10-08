@@ -1,10 +1,10 @@
 <?php
 
 function getConnection():PDO{
-    $db_username="pogar";
-    $db_password="bonfiscal706623";
+    $db_username="root";
+    $db_password="";
     $db_name="webshop";
-    $db_server="localhost:3306";
+    $db_server="localhost:3308";
     return new PDO("mysql:host=$db_server;dbname=$db_name",$db_username,$db_password);
 }
 
@@ -25,7 +25,7 @@ function addPagingInfoToQuery(string $query):string{
     $pageNumber=isset($_GET['pg'])?$_GET['pg']:1;
     $offset=($pageNumber-1)*$elementsInPage;
 
-    return $query." LIMIT $offset $elementsInPage";
+    return $query." LIMIT $offset, $elementsInPage";
 
 }
 
@@ -53,7 +53,7 @@ function paging(string $table):void{
     $statement=$connection->prepare($query);
     $statement->execute();
     $numberOfElements=$statement->fetch()["n"];
-    $numberOfElements=125;
+    //$numberOfElements=125;
     $numberOfPages=(int)(($numberOfElements+$elementsInPage-1) / $elementsInPage);
 
     echo"<div>";

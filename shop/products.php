@@ -29,7 +29,8 @@ class ProductsController extends BaseController
     public function getAllProducts():array
     {
         $connection = getConnection();
-        $query = "SELECT * FROM product";
+        $query = addPagingInfoToQuery("SELECT * FROM product");
+        //echo ($query);
         $statement = $connection->prepare($query);
         $statement->execute();
         $resultset = $statement->fetchAll();
