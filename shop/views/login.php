@@ -9,28 +9,24 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-<?php
-    if (isset($color) && isset($feedBack)){
-        echo '<p style="color:'.$color.'">'.$feedBack.'</p>';
-    }
-?>
+
 <div class="container">
 <form class="w-50 h-50 ml-auto mr-auto mt-5 border rounded p-3" method="post" action="../shop/login.php">
     <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
-        <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
     <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
-        <input name="password" type="password" class="form-control" id="exampleInputPassword1">
+        <input name="password" type="password" class="form-control" id="exampleInputPassword1" required>
     </div>
-    <button type="submit" class="btn" style="background-color: #9EA3B0; color: black;">Submit</button>
-<!--    <label for="email">Email</label>-->
-<!--    <input type="email" name="email" id="email">-->
-<!--    <label for="password"></label>-->
-<!--    <input type="password" name="password" id="password">-->
-<!--    <button type="submit">Sign In</button>-->
+    <button type="submit" class="btn btn-sm" style="background-color: #9EA3B0; color: black;">Sign In</button>
+    <?php
+        if (isset($color) && isset($feedBack)){
+            echo '<p style="color:'.$color.';margin-top:10px;text-align:center;">'.$feedBack.'</p>';
+        }
+    ?>
 </form>
 </div>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
