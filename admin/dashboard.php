@@ -12,7 +12,7 @@ class DashboardController extends BaseController
     public function handleGet(): string
     {
 
-
+        $this->getUser()->checkIfLoggedInAsAdmin();
 
         return "dashboard";
 
