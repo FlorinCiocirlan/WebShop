@@ -12,6 +12,10 @@ class CartController extends BaseController{
             $cart = getByID($pdo, $id);
             $this->templateData['title'] = 'Cart';
             $this->templateData['cart'] = $cart;
+            $this->templateData['sum'] = 0;
+            foreach ($cart as $item){
+                $this->templateData['sum'] += $item['price'] * $item['prodQty'];
+            }
             return "cart";
         }
 
@@ -22,7 +26,18 @@ class CartController extends BaseController{
 
     public function handlePost(): string
     {
-        // TODO: Implement handlePost() method.
+        if ($_REQUEST['action'] === 'delete')
+        {
+            $pdo = getConnection();
+            $cartID = (int)$_REQUEST['cartId'];
+            $productId = (int)$_REQUEST['productId'];
+            deleteCartItem($pdo, $productId, $cartID);
+            exit();
+        } elseif ($_REQUEST['action'] === 'add')
+        {
+            $pdo = getConnection();
+        }
+
     }
 }
 

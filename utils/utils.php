@@ -141,3 +141,8 @@ function getByID(PDO $pdo, int $id){
     return  $stmt->fetchAll();
 }
 
+function deleteCartItem(PDO $pdo, $productId, $cartId){
+    $stmt = $pdo->prepare("DELETE FROM cart_product WHERE cart_id=:cartId AND product_id=:productId");
+    $stmt->execute(['cartId' => $cartId, 'productId' => $productId]);
+}
+
