@@ -1,6 +1,6 @@
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="../Static/css/add_user.css"/>
+    <link rel="stylesheet" type="text/css" href="../Static/css/add.css"/>
 
 </head>
 <body>
