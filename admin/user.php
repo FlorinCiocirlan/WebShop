@@ -11,6 +11,9 @@ class UserController extends BaseController
 
     public function handleGet(): string
     {
+        $this->getUser()->checkIfLoggedInAsAdmin();
+
+
         $this->templateData['name']="";
         $this->templateData['email']="";
         $this->templateData['address']="";
@@ -38,6 +41,8 @@ class UserController extends BaseController
 
     public function handlePost(): string
     {
+        $this->getUser()->checkIfLoggedInAsAdmin();
+
         $id=$_POST['id'];
         $name=$_POST['name'];
         $email=$_POST['email'];
