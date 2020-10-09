@@ -10,8 +10,8 @@
                     <li><a href="#">Home</a></li>
                     <li><a href="products.php">Products</a></li>
                     <li><a href="#">Cart</a></li>
-                    <li><a href="#">My Account</a></li>
-                    <li><a href="#">Logout</a></li>';
+                    <li><a href="profile.php">My Account</a></li>
+                    <li><a href="logout.php">Logout</a></li>';
                 } else {
                     echo '
                     <li><a href="#">Home</a></li>

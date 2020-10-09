@@ -45,7 +45,20 @@ class User{
         return $this->name;
     }
 
+    public function getAllUserInfo(){
+        if ($this->isLoggedIn()){
+            $connection=getConnection();
+            $query="SELECT * FROM users WHERE id= :id";
+            $statement=$connection->prepare($query);
+            $data=["id"=>$this->id];
+            $statement->execute($data);
+            $resultset=$statement->fetch();
+            return $resultset;
+        }else {
+            header("Location: ../shop/login.php");
+        }
 
+    }
 
     public function login(string $email, string $password):void{
         $connection=getConnection();
@@ -66,7 +79,7 @@ class User{
             if ($this->isAdmin)
                 header("Location: ../admin/dashboard.php");
             else
-                header("Location: ../shop/dashboard.php");
+                header("Location: ../shop/products.php");
         } else
             header("Location: ../shop/login.php");
 
