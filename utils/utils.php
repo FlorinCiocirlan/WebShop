@@ -113,6 +113,40 @@ function getCartDetails(int $userID){
     return $stmt->fetchAll();
 }
 
+
+
+function getOrderByUserId(int $userID){
+    $pdo = getConnection();
+    $query = 'SELECT `order`.id as order_id, `order`.payment_method as order_payment , `order`.delivery_method as order_delivery,
+        `order`.status as order_status , p.name as product_name , p.brand as product_brand, p.category_name as product_category,
+       p.price as product_price , cp.quantity as product_quantity
+       FROM `order` JOIN cart c on c.id = `order`.cart_id JOIN cart_product cp on c.id = cp.cart_id JOIN product p on p.id = cp.product_id WHERE `order`.user_id = :userID ORDER BY order_id;';
+    $stmt = $pdo->prepare($query);
+    $stmt->execute([':userID'=>$userID]);
+    return $stmt->fetchAll();
+
+}
+
+function getOrderById(int $orderID){
+    $pdo = getConnection();
+    $query = 'SELECT `order`.id as order_id, `order`.payment_method as order_payment , `order`.delivery_method as order_delivery,
+        `order`.status as order_status , p.name as product_name , p.brand as product_brand, p.category_name as product_category,
+       p.price as product_price , cp.quantity as product_quantity
+       FROM `order` JOIN cart c on c.id = `order`.cart_id JOIN cart_product cp on c.id = cp.cart_id JOIN product p on p.id = cp.product_id WHERE `order`.id = :orderID ';
+    $stmt = $pdo->prepare($query);
+    $stmt->execute([':orderID'=>$orderID]);
+    return $stmt->fetchAll();
+}
+
+function getOrdersIdByUserId(int $userID){
+    $pdo = getConnection();
+    $query = 'SELECT id from `order` WHERE user_id=:userID';
+    $stmt = $pdo->prepare($query);
+    $stmt->execute([':userID'=>$userID]);
+    return $stmt->fetchAll();
+}
+
+
 function addOrder(array $orderDetails){
     $pdo = getConnection();
     $query = "INSERT INTO `order`(cart_id, user_id, payment_method, delivery_method, status) VALUES(:cartID, :userID, :payment, :delivery, :status)";
