@@ -13,7 +13,7 @@
 
 <div class="container">
     <div>
-        <button class="btn btn-sm mt-2" style="background-color: #FAE1DF;color:black;"><a href="/shop/products.php" style="text-decoration: none; color: black; width: 100%; height: 100%">Go Home </a></button>
+        <button class="btn btn-sm mt-2" style="background-color: #FAE1DF;color:black;"><a href="products.php" style="text-decoration: none; color: black; width: 100%; height: 100%">Go Home </a></button>
     </div>
 <form class="w-50 h-50 ml-auto mr-auto mt-5 border rounded p-3" method="post" action="../shop/login.php">
     <div class="form-group">

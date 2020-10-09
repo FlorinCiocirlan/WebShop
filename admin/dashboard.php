@@ -14,6 +14,7 @@ class DashboardController extends BaseController
 
         $this->getUser()->checkIfLoggedInAsAdmin();
 
+        //var_dump(getcwd());
         return "dashboard";
 
     }
@@ -23,7 +24,7 @@ class DashboardController extends BaseController
 
     }
 
-    
+
 
 
 }
