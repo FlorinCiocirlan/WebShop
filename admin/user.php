@@ -21,7 +21,7 @@ class UserController extends BaseController
         $this->templateData['admin']=FALSE;
 
         if (!isset($_GET['id']))
-            return "add_user.php";
+            return "add_user";
 
         $user=$this->getUserById($_GET['id']);
 
@@ -41,18 +41,30 @@ class UserController extends BaseController
 
     public function handlePost(): string
     {
+
         $this->getUser()->checkIfLoggedInAsAdmin();
 
-        $id=$_POST['id'];
         $name=$_POST['name'];
         $email=$_POST['email'];
         $address=$_POST['address'];
         $phone=$_POST['phone'];
         $isadmin=(isset($_POST['admin']))?1:0;
         $pdo = getConnection();
-        $query = "UPDATE users SET name=:name,email=:email,address=:address,phone=:phone,isadmin=:isadmin WHERE id=:id";
-        $stmt = $pdo ->prepare($query);
-        $stmt->execute(["id"=>$id,"name"=>$name,"email"=>$email,"address"=>$address,"phone"=>$phone,"isadmin"=>$isadmin]);
+        if (isset($_POST['id'])) {
+            $id = $_POST['id'];
+            $query = "UPDATE users SET name=:name,email=:email,address=:address,phone=:phone,isadmin=:isadmin WHERE id=:id";
+            $stmt = $pdo->prepare($query);
+            $stmt->execute(["id" => $id, "name" => $name, "email" => $email, "address" => $address, "phone" => $phone, "isadmin" => $isadmin]);
+
+        } else{
+
+            $query = "INSERT INTO users SET name=:name,email=:email,address=:address,phone=:phone,isadmin=:isadmin";
+            $stmt = $pdo->prepare($query);
+            $stmt->execute(["name" => $name, "email" => $email, "address" => $address, "phone" => $phone, "isadmin" => $isadmin]);
+
+
+        }
+
         header("Location: users.php");
         exit();
 

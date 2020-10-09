@@ -38,3 +38,39 @@ img {
     margin-left: auto;
     margin-right: auto;
 }
+.adminmenu{
+    width: 100%;
+    text-align: center;
+
+
+}
+
+.adminmenu ul {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #e79452;
+
+}
+
+.adminmenu li {
+    float: left;
+
+}
+
+.adminmenu li a {
+    display: block;
+    color: #115a64;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+
+}
+
+.adminmenu li a:hover:not(.active) {
+    background-color: #FAE1DF;
+}
