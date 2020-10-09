@@ -53,7 +53,7 @@ function paging(string $table):void{
 
 
     $connection=getConnection();
-    $query="SELECT COUNT(*) as n FROM $table";
+    $query="SELECT COUNT(*) as n FROM `$table`";
     $statement=$connection->prepare($query);
     $statement->execute();
     $numberOfElements=$statement->fetch()["n"];
