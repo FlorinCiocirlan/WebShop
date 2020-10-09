@@ -51,7 +51,7 @@ class ProductsController extends BaseController
     public function getAllProductsOnPage():array{
 
         $pdo = getConnection();
-        $query = addPagingInfoToQuery('SELECT * FROM product');
+        $query = addPagingInfoToQuery('SELECT * FROM product ORDER BY id DESC');
         $stmt = $pdo ->prepare($query);
         $stmt->execute();
         return $stmt->fetchAll();

@@ -6,7 +6,7 @@ require_once "../Core/basecontroller.php";
 
 class ProductController extends BaseController
 {
-
+    public static $DEFAULT_IMAGE="default.jpg";
 
 
     public function handleGet(): string
@@ -18,10 +18,10 @@ class ProductController extends BaseController
         $this->templateData['description']="";
         $this->templateData['category_name']="";
         $this->templateData['brand']="";
-        $this->templateData['stock']="";
-        $this->templateData['price']="";
+        $this->templateData['stock']=0;
+        $this->templateData['price']=0;
         $this->templateData['image']="";
-
+        $this->templateData['categories']=$this->getAllCategories();
 
         if (!isset($_GET['id']))
             return "add_product";
@@ -37,7 +37,7 @@ class ProductController extends BaseController
         $this->templateData['price']=$product['price'];
         $this->templateData['image']=$product['image'];
 
-        $this->templateData['categories']=$this->getAllCategories();
+
 
         return "add_product";
 
@@ -84,15 +84,35 @@ class ProductController extends BaseController
 
             }
 
-            header("Location: products.php");
-            exit();
 
+
+        } else{
+            $target_dir = "../images/";
+            $image_not_present=!file_exists($_FILES['image']['tmp_name']) || !is_uploaded_file($_FILES['image']['tmp_name']);
+            if (!$image_not_present){
+
+                $target_file = $target_dir . basename($_FILES["image"]["name"]);
+                move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
+                $image=basename($_FILES["image"]["name"]);
+
+            } else{
+                $target_dir = "../images/";
+                $target_file = $target_dir . basename(self::$DEFAULT_IMAGE);
+                $image=basename(self::$DEFAULT_IMAGE);
+            }
+
+            $query = "INSERT INTO product SET name=:name,description=:description,category_name=:category_name,brand=:brand,stock=:stock,price=:price,image=:image";
+            //var_dump($query);
+            $stmt = $pdo ->prepare($query);
+            $stmt->execute(["name"=>$name,"description"=>$description,"category_name"=>$category_name,"brand"=>$brand,"stock"=>$stock,"price"=>$price,"image"=>$image]);
 
 
 
 
         }
 
+        header("Location: products.php");
+        exit();
 
 
         return "";
