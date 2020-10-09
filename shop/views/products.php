@@ -7,7 +7,7 @@
 
         <input class="form-control col-8" type="text" placeholder="Looking for a product?" name="searchValue">
 
-        <button class="col-4 btn btn-info"  type="submit"> Submit </button>
+        <button class="col-2 btn" style="background-color: #546A7B; color: white;" type="submit"> Search </button>
     </form>
 
 
@@ -38,8 +38,8 @@
                                     <p class="lead"  style="text-align: center;" >Price: '.$product["price"] .' USD</p>                                
                                   </div>
                                   <div class="card-text" style="text-align: center;">
-                 <a class="btn btn-success" href="#">Add to cart</a>    
-                 <a class="btn btn-primary" href="/shop/product.php?id='.$product['id'] .'"> Details </a>                
+                 <a class="btn" style="background-color: #0D1F2D; color: white;" href="#">Add to cart</a>    
+                 <a class="btn" style="background-color: #546A7B; color: white;" href="/shop/product.php?id='.$product['id'] .'"> Details </a>                
                                     </div>
                                </div> 
                     </div> <br>
