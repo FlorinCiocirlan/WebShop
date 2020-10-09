@@ -1,7 +1,7 @@
 <?php
 
 
-require_once "user.php";
+require_once "../Core/user.php";
 
 
 abstract class BaseController{
