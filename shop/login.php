@@ -7,7 +7,9 @@
             if(!$this->getUser()->isLoggedIn()){
                 return 'login';
             } else {
+
             header('Location: products.php');
+
             }
         }
 

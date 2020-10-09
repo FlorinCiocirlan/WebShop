@@ -45,7 +45,20 @@ class User{
         return $this->name;
     }
 
+    public function getAllUserInfo(){
+        if ($this->isLoggedIn()){
+            $connection=getConnection();
+            $query="SELECT * FROM users WHERE id= :id";
+            $statement=$connection->prepare($query);
+            $data=["id"=>$this->id];
+            $statement->execute($data);
+            $resultset=$statement->fetch();
+            return $resultset;
+        }else {
+            header("Location: ../shop/login.php");
+        }
 
+    }
 
     public function login(string $email, string $password):void{
         $connection=getConnection();
