@@ -11,6 +11,7 @@
                     <li><a href="products.php">Products</a></li>
 
                     <li><a href="cart.php">Cart</a></li>
+                    <li><a href="order.php">Orders History</a></li>
                     <li><a href="profile.php">My Account</a></li>
                     <li><a href="logout.php">Logout</a></li>';
                 } else {
