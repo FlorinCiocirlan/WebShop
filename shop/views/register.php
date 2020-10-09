@@ -13,6 +13,9 @@
 
 <body>
     <div class="container">
+        <div>
+            <button class="btn btn-sm mt-2" style="background-color: #FAE1DF;color:black;"><a href="/shop/products.php" style="text-decoration: none; color: black;">Go Home </a></button>
+        </div>
         <form class="w-50 h-50 ml-auto mr-auto mt-5 border rounded p-3" action="../shop/register.php" method="post">
             <div class="form-group">
                 <label for="email">Email address</label>
@@ -26,6 +29,9 @@
             <div class="form-group">
                 <label for="confirmPassword">Confirm Password</label>
                 <input name="confirmPassword" type="password" class="form-control" id="confirmPassword" required>
+            </div>
+            <div class="form-group">
+                <label>Already have an account ? <a href="login.php">Sign In</a></label>
             </div>
             <button id="submitBtn" type="submit" class="btn btn-sm" style="background-color: #9EA3B0; color: black;">Sign Up</button>
         </form>

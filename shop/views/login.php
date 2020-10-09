@@ -12,6 +12,9 @@
 <body>
 
 <div class="container">
+    <div>
+        <button class="btn btn-sm mt-2" style="background-color: #FAE1DF;color:black;"><a href="/shop/products.php" style="text-decoration: none; color: black; width: 100%; height: 100%">Go Home </a></button>
+    </div>
 <form class="w-50 h-50 ml-auto mr-auto mt-5 border rounded p-3" method="post" action="../shop/login.php">
     <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
@@ -21,6 +24,9 @@
     <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
         <input name="password" type="password" class="form-control" id="exampleInputPassword1" required>
+    </div>
+    <div class="form-group">
+        <label for="">New Here ? <a href="register.php">Sign Up </a></label>
     </div>
     <button type="submit" class="btn btn-sm" style="background-color: #9EA3B0; color: black;">Sign In</button>
     <?php
