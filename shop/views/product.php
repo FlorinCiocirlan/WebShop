@@ -1,3 +1,4 @@
+<?php require "../layout/header.php"?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="/Static/css/Cusstom.css"/>
     <title>Document</title>
 </head>
-<body>
+
 <br> <br>
 <div class="container">
 <div>  <h1 style="text-align: center"> <?= $prod['prod']['name'] ?>   </h1>   <br></div><br><hr class="my-4"><br>
@@ -39,7 +40,7 @@
                 $stock = 'last product in stock';
             } ?>
             <h5 class="card-text" style=" color: <?=$color ?>"><?=$stock ?>  </h5>
-            <a class="btn btn-primary btn-lg" href="#">Add to cart</a>
+            <a class="btn btn-lg" style="background-color: #FAE1DF;color: black;" href="#">Add to cart</a>
 
         </div>
     </div>
@@ -59,7 +60,7 @@
                             </div>
                                <div class="card-body">
                                   <div class="card-text" style="text-align: center;">           
-                 <a class="btn btn-primary" href="/shop/product.php?id='.$product['id'] .'"> Details </a>                
+                 <a class="btn" style="background-color: #9EA3B0;color: black;" href="/shop/product.php?id='.$product['id'] .'"> Details </a>                
                                     </div>
                                </div> 
                     </div> <br>
@@ -69,7 +70,8 @@
    ?>
 </div>
 </div>
-</body>
+
+<?php require "../layout/footer.php"?>
 </html>
 
 
