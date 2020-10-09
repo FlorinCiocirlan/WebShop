@@ -15,16 +15,26 @@
                 $this->templateData['phone'] = $userDetails['phone'];
 
                 $cartDetails = getCartDetails($this->getUser()->getID());
-                $this->templateData['products'] = $cartDetails;
+                if (count($cartDetails)>0) {
+                    $this->templateData['products'] = $cartDetails;
 
-                return 'checkout';
+                    return 'checkout';
+                }else{
+                    header('Location: products.php ');
+                    exit();
+
+                }
+
             } else {
-                header('Location : /shop/login.php ');
+                header('Location: login.php ');
+                exit();
             }
         }
 
         public function handlePost(): string
         {
+            $this->getUser()->checkIfLoggedIn();
+
             $orderDetails['userID'] = $this->getUser()->getID();
             $orderDetails['cartID'] = $_POST['cart_id'];
             $orderDetails['payment'] = $_POST['payment'];

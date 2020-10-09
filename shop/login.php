@@ -9,6 +9,7 @@
             } else {
 
             header('Location: products.php');
+            exit();
 
             }
         }

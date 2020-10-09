@@ -43,7 +43,7 @@
         </tr>
         </tfoot>
     </table>
-    <a href="/shop/checkout.php" class="btn" style="background-color: #E4C3AD; color: black;">Checkout</a>
+    <a href="checkout.php" class="btn" style="background-color: #E4C3AD; color: black;">Checkout</a>
 </div>
 
 <?php require "../layout/footer.php" ?>

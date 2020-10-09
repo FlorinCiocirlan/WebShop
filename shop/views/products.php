@@ -39,7 +39,7 @@
                                   </div>
                                   <div class="card-text" style="text-align: center;">
                  <a class="btn" style="background-color: #0D1F2D; color: white;" href="#">Add to cart</a>    
-                 <a class="btn" style="background-color: #546A7B; color: white;" href="/shop/product.php?id='.$product['id'] .'"> Details </a>                
+                 <a class="btn" style="background-color: #546A7B; color: white;" href="product.php?id='.$product['id'] .'"> Details </a>                
                                     </div>
                                </div> 
                     </div> <br>

@@ -6,6 +6,8 @@
 
         public function handleGet(): string
         {
+            $this->getUser()->checkIfLoggedIn();
+
             $orders = getOrderByUserId($this->getUser()->getID());
 
             $ordersId = getOrdersIdByUserId($this->getUser()->getID());
@@ -24,6 +26,8 @@
 
         public function handlePost(): string
         {
+            $this->getUser()->checkIfLoggedIn();
+
             $order = getOrderById((int)$_POST['orderID']);
             createPDF(getUserById($this->getUser()->getID())['name'],$order);
         }

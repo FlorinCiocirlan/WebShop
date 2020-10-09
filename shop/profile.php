@@ -8,6 +8,8 @@ class ProfileController extends BaseController
 
     public function handleGet(): string
     {
+        $x=array();
+
 
         $product = $this->getUser()->getAllUserInfo();
 
