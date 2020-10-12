@@ -65,9 +65,10 @@ class ProductController extends BaseController
             $image_not_present=!file_exists($_FILES['image']['tmp_name']) || !is_uploaded_file($_FILES['image']['tmp_name']);
             if (!$image_not_present){
                 $target_dir = "../images/";
-                $target_file = $target_dir . basename($_FILES["image"]["name"]);
+                $ext=substr($_FILES["image"]["name"],strrpos($_FILES["image"]["name"],"."));
+                $image=basename($_FILES["image"]["name"],$ext)."_i_m_g_$id".$ext;
+                $target_file = $target_dir . $image;
                 move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
-                $image=basename($_FILES["image"]["name"]);
                 $query = "UPDATE product SET name=:name,description=:description,category_name=:category_name,brand=:brand,stock=:stock,price=:price,image=:image WHERE id=:id";
                 //var_dump($query);
                 $stmt = $pdo ->prepare($query);
