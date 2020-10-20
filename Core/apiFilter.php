@@ -57,17 +57,16 @@ class Request
         } elseif ($category == 'none' && $price == 'none' && $alphabetic == 'alphabeticalUp') {
             $query = "SELECT * FROM product WHERE  deleted = 0 ORDER BY 
          name ASC ";}
-
              elseif ($category != 'none' && $price == 'priceDown' && $alphabetic == 'none') {
             $query = "SELECT * FROM product WHERE category_name = :category AND  deleted = 0 ORDER BY 
                     price DESC ";
-            } elseif ($category == 'none' && $price == 'priceUp' && $alphabetic == 'none') {
+            } elseif ($category != 'none' && $price == 'priceUp' && $alphabetic == 'none') {
             $query = "SELECT * FROM product WHERE category_name = :category AND deleted = 0 ORDER BY 
                     price ASC ";
-            } elseif ($category == 'none' && $price == 'none' && $alphabetic == 'alphabeticalDown') {
+            } elseif ($category != 'none' && $price == 'none' && $alphabetic == 'alphabeticalDown') {
             $query = "SELECT * FROM product WHERE category_name = :category AND deleted = 0 ORDER BY 
                      name DESC ";
-            } elseif ($category == 'none' && $price == 'none' && $alphabetic == 'alphabeticalUp') {
+            } elseif ($category != 'none' && $price == 'none' && $alphabetic == 'alphabeticalUp') {
             $query = "SELECT * FROM product WHERE category_name = :category AND deleted = 0 ORDER BY 
                      name ASC ";}
 
