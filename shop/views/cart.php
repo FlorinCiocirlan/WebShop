@@ -16,6 +16,9 @@
         <?php
             if($cart !==''){
             foreach ($cart as $item){
+                $dataCartId = isset($item['cartId']) ? 'data-cart-id = '. $item['cartId'] : '';
+                $dataProdId = isset($item['productId']) ? 'data-product-id = '. $item['productId'] : '';
+
         echo '
             <tr>
                 <td>' . $item["name"]. '</td>
@@ -24,8 +27,8 @@
                 <td>
                     <a href="#" class="js-delete-products"
                         data-url = "cart.php"
-                        data-cart-id = '. $item['cartId'] .'
-                        data-product-id = '. $item['productId'] .'
+                        '.$dataCartId.'
+                        '.$dataProdId.'
                         data-action = "delete"
                     >
                         <span class="fa fa-trash"></span>

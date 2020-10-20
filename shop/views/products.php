@@ -40,7 +40,6 @@
                                   <div class="card-text" style="text-align: center;">
                                 <a class="btn js-add-product" 
                                     data-url = "cart.php"
-                                    data-cart-id = '. $cartId['id'] .'
                                     data-product-id = '. $product['id'] .'
                                     data-action = "add"
                                     style="background-color: #0D1F2D; color: white;" href="#">Add to cart</a>    
@@ -68,7 +67,6 @@
 
             let $deleteUrl = $(this).data('url');
             let $data = { 'action': $(this).data('action'),
-                'cartId': $(this).data('cart-id'),
                 'productId': $(this).data('product-id')
             }
 
