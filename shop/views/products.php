@@ -26,7 +26,7 @@
             $color = 'orange';
             $stock = 'last product in stock';
         }
-        echo  ' <div class="col col-sm-12 col-md-6 col-lg-4"> 
+        echo  ' <div class="col col-sm-12 col-md-6 col-lg-4 js-product"> 
                     <div class="card" style=" width:20rem;"> 
                         <img class="card-img-top" style="height:20rem; width:auto;" src="../images/'. $product["image"] .'" alt=""/> 
                             <div class="card-header"> 
@@ -38,8 +38,13 @@
                                     <p class="lead"  style="text-align: center;" >Price: '.$product["price"] .' USD</p>                                
                                   </div>
                                   <div class="card-text" style="text-align: center;">
-                 <a class="btn" style="background-color: #0D1F2D; color: white;" href="#">Add to cart</a>    
-                 <a class="btn" style="background-color: #546A7B; color: white;" href="product.php?id='.$product['id'] .'"> Details </a>                
+                                <a class="btn js-add-product" 
+                                    data-url = "cart.php"
+                                    data-cart-id = '. $cartId['id'] .'
+                                    data-product-id = '. $product['id'] .'
+                                    data-action = "add"
+                                    style="background-color: #0D1F2D; color: white;" href="#">Add to cart</a>    
+                                <a class="btn" style="background-color: #546A7B; color: white;" href="product.php?id='.$product['id'] .'"> Details </a>                
                                     </div>
                                </div> 
                     </div> <br>
@@ -53,5 +58,31 @@
 <?php paging("product",FALSE); ?>
 
     <?php require "../layout/footer.php" ?>
+
+
+<script>
+    $(document).ready(function () {
+        let $product = $('.js-product');
+        $product.find('.js-add-product').on('click', function (e) {
+            e.preventDefault();
+
+            let $deleteUrl = $(this).data('url');
+            let $data = { 'action': $(this).data('action'),
+                'cartId': $(this).data('cart-id'),
+                'productId': $(this).data('product-id')
+            }
+
+            $.ajax(
+                {
+                    type: "POST",
+                    url: $deleteUrl,
+                    data: $data,
+                    success: function () {
+                        console.log($data);
+                    }
+                })
+        })
+    })
+</script>
 
 </html>

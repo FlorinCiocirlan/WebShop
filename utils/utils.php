@@ -175,8 +175,27 @@ function getByID(PDO $pdo, int $id){
     return  $stmt->fetchAll();
 }
 
+function getCartByID(PDO $pdo, int $id){
+    $stmt = $pdo->prepare("SELECT c.id FROM cart c WHERE user_id=:id");
+    $stmt->execute(['id' => $id]);
+    return  $stmt->fetch();
+}
+
 function deleteCartItem(PDO $pdo, $productId, $cartId){
     $stmt = $pdo->prepare("DELETE FROM cart_product WHERE cart_id=:cartId AND product_id=:productId");
     $stmt->execute(['cartId' => $cartId, 'productId' => $productId]);
+}
+
+function addCartItem(PDO $pdo, $productId, $cartId, $qty){
+    $stmt = $pdo->prepare("SELECT * FROM cart_product WHERE product_id=:productId AND cart_id=:cartId");
+    $stmt->execute(['productId' => $productId, 'cartId' => $cartId]);
+    $valueExists = $stmt->fetch(PDO::FETCH_ASSOC);
+    if (!$valueExists){
+        $stmt = $pdo->prepare("INSERT INTO cart_product (cart_id, product_id, quantity) VALUES (:cartId, :productId, :qty )");
+        $stmt->execute(['cartId' => $cartId, 'productId' => $productId, 'qty' => $qty]);
+    } else {
+        $stmt = $pdo->prepare("UPDATE cart_product SET quantity=quantity + :qty WHERE cart_id=:cartId AND product_id=:productId");
+        $stmt->execute([ 'qty' => $qty, 'cartId' => $cartId, 'productId' => $productId]);
+    }
 }
 

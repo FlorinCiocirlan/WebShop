@@ -26,18 +26,20 @@ class CartController extends BaseController{
 
     public function handlePost(): string
     {
-        if ($_REQUEST['action'] === 'delete')
-        {
+        if ($_REQUEST['action'] === 'delete') {
             $pdo = getConnection();
             $cartID = (int)$_REQUEST['cartId'];
             $productId = (int)$_REQUEST['productId'];
             deleteCartItem($pdo, $productId, $cartID);
             exit();
-        } elseif ($_REQUEST['action'] === 'add')
-        {
+        } elseif ($_REQUEST['action'] === 'add'){
             $pdo = getConnection();
+            $cartID = (int)$_REQUEST['cartId'];
+            $productId = (int)$_REQUEST['productId'];
+            $quantity = (int)$_REQUEST['productId'] !== null ?: 1;
+            addCartItem($pdo, $productId, $cartID, $quantity);
+            exit();
         }
-
     }
 }
 
