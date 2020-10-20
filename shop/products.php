@@ -11,7 +11,7 @@ class ProductsController extends BaseController
 
         $products = $this->getAllProducts();
         $this->templateData['prod'] = [ "prod"=>$products];
-
+        $this->templateData['categ'] = $this->getCategory();
         return "products";
     }
 
@@ -45,6 +45,16 @@ class ProductsController extends BaseController
         $statement = $connection->prepare($query);
         $statement->execute();
         $resultset = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $resultset;
+    }
+
+    public function getCategory(){
+        $connection = getConnection();
+        $query = addPagingInfoToQuery("SELECT * FROM category WHERE deleted=0");
+        //echo ($query);
+        $statement = $connection->prepare($query);
+        $statement->execute();
+        $resultset = $statement->fetchAll();
         return $resultset;
     }
     }
