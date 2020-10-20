@@ -30,6 +30,11 @@
             $orderDetails['payment'] = $_POST['payment'];
             $orderDetails['delivery'] = $_POST['delivery'];
             $orderDetails['status'] = 'placed';
+            if($_POST['payment'] === 'PayPal'){
+                $orderDetails['status'] = 'paid';
+            } else {
+                $orderDetails['status'] = 'placed';
+            }
             addOrder($orderDetails);
 
             $emailOrderDetails = getCartDetails($this->getUser()->getID());

@@ -120,7 +120,7 @@ function getOrderByUserId(int $userID){
     $query = 'SELECT `order`.id as order_id, `order`.payment_method as order_payment , `order`.delivery_method as order_delivery,
         `order`.status as order_status , p.name as product_name , p.brand as product_brand, p.category_name as product_category,
        p.price as product_price , cp.quantity as product_quantity
-       FROM `order` JOIN cart c on c.id = `order`.cart_id JOIN cart_product cp on c.id = cp.cart_id JOIN product p on p.id = cp.product_id WHERE `order`.user_id = :userID ORDER BY order_id;';
+       FROM `order` JOIN cart c on c.id = `order`.cart_id JOIN cart_product cp on c.id = cp.cart_id JOIN product p on p.id = cp.product_id WHERE `order`.user_id = :userID ORDER BY order_id DESC;';
     $stmt = $pdo->prepare($query);
     $stmt->execute([':userID'=>$userID]);
     return $stmt->fetchAll();
@@ -140,7 +140,7 @@ function getOrderById(int $orderID){
 
 function getOrdersIdByUserId(int $userID){
     $pdo = getConnection();
-    $query = 'SELECT id from `order` WHERE user_id=:userID';
+    $query = 'SELECT id from `order` WHERE user_id=:userID ORDER BY id DESC';
     $stmt = $pdo->prepare($query);
     $stmt->execute([':userID'=>$userID]);
     return $stmt->fetchAll();
