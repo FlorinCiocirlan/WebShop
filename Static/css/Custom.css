@@ -53,10 +53,14 @@ nav ul li a:hover {
     text-decoration: none;
 }
 
-nav ul a span {
+.drop {
     color: #0D1F2D;
     text-decoration: none;
     text-transform: uppercase;
+}
+
+.drop:hover::before{
+    width: 0 !important;
 }
 
 

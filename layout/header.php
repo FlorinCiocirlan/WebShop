@@ -28,8 +28,8 @@
                         </a>
                     </li>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="login.php"><span>Login</span></a>
-                        <a class="dropdown-item" href="register.php"><span>Register</span></a>    
+                        <a class="dropdown-item drop" href="login.php">Login</a>
+                        <a class="dropdown-item drop" href="register.php">Register</a>
                     </div>
                     
                     
