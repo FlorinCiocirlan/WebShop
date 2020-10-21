@@ -216,3 +216,15 @@ function getProductById(PDO $pdo, $productId){
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
+function mergeCookieToDBCart(){
+    $cookieCart = json_decode($_COOKIE['cart'], true);
+    $pdo = getConnection();
+    $cartId = getCartByID();
+    foreach ($cookieCart as $product){
+        $productId = (int)$product['productId'];
+        $qty = (int)$product['prodQty'];
+        addCartItem($pdo, $productId, $cartId, $qty );
+    }
+    setcookie('cart', '', time() - 3600);
+}
+

@@ -8,13 +8,6 @@ class ProductsController extends BaseController
 
     public function handleGet(): string
     {
-//        if(isset($_SESSION['userID'])) {
-//            $id = $_SESSION['userID'];
-//            $pdo = getConnection();
-//            $cartId = getCartByID($pdo, $id);
-//            $this->templateData['cartId'] = $cartId;
-//        }
-
         $products = $this->getAllProducts();
         $this->templateData['prod'] = [ "prod"=>$products];
 

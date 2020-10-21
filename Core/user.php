@@ -74,8 +74,8 @@ class User{
             $this->name=$resultset["name"];
             $_SESSION['username']=$this->name;
             $this->isAdmin=($resultset["isadmin"]==0)?FALSE:TRUE;
-
             $_SESSION['isAdmin']=$this->isAdmin;
+            mergeCookieToDBCart();
             if ($this->isAdmin)
                 header("Location: ../admin/dashboard.php");
             else
