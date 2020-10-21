@@ -42,11 +42,35 @@
                                     data-url = "cart.php"
                                     data-product-id = '. $product['id'] .'
                                     data-action = "add"
+                                    data-toggle="modal" 
+                                    data-target="#exampleModal"
                                     style="background-color: #0D1F2D; color: white;" href="#">Add to cart</a>    
                                 <a class="btn" style="background-color: #546A7B; color: white;" href="product.php?id='.$product['id'] .'"> Details </a>                
                                     </div>
                                </div> 
                     </div> <br>
+                    
+                    <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Product added to you cart</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                '. $product["name"].'
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Continue shopping</button>
+                                <a type="button" class="btn" style="background-color: #0D1F2D; color: white; " href="cart.php">Go to cart</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                                            
                 </div>';
     }
 
@@ -58,29 +82,8 @@
 
     <?php require "../layout/footer.php" ?>
 
-
 <script>
-    $(document).ready(function () {
-        let $product = $('.js-product');
-        $product.find('.js-add-product').on('click', function (e) {
-            e.preventDefault();
-
-            let $deleteUrl = $(this).data('url');
-            let $data = { 'action': $(this).data('action'),
-                'productId': $(this).data('product-id')
-            }
-
-            $.ajax(
-                {
-                    type: "POST",
-                    url: $deleteUrl,
-                    data: $data,
-                    success: function () {
-                        console.log($data);
-                    }
-                })
-        })
-    })
+<?php require "../Static/js/product.js" ?>
 </script>
 
 </html>
