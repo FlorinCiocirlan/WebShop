@@ -189,7 +189,7 @@ function getCartByID(){
     $id = $_SESSION['userID'] ?? '-1';
     $stmt = $pdo->prepare("SELECT c.id FROM cart c WHERE user_id=:id");
     $stmt->execute(['id' => $id]);
-    return  $id;
+    return $stmt->fetch()[0];
 }
 
 function deleteCartItem(PDO $pdo, $productId, $cartId){
@@ -198,6 +198,7 @@ function deleteCartItem(PDO $pdo, $productId, $cartId){
 }
 
 function addCartItem(PDO $pdo, $productId, $cartId, $qty){
+
     $stmt = $pdo->prepare("SELECT * FROM cart_product WHERE product_id=:productId AND cart_id=:cartId");
     $stmt->execute(['productId' => $productId, 'cartId' => $cartId]);
     $valueExists = $stmt->fetch(PDO::FETCH_ASSOC);
