@@ -15,6 +15,7 @@
             <fieldset><input type="hidden" name="id" value="<?= $id ?>"/></fieldset>
         <?php endif; ?>
         <fieldset>Name: <input type="text" name="name" value="<?= $name ?>" required/></fieldset>
+        <fieldset>Password: <input style="width:100%"type="password" name="password" value="" required/></fieldset>
         <fieldset>Email: <input type="email" name="email" value="<?= $email ?>" required/></fieldset>
         <fieldset>Address: <textarea name="address"><?= $address ?></textarea></fieldset>
         <fieldset>Phone: <input type="tel" name="phone" value="<?= $phone ?>" required/></fieldset>
