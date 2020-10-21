@@ -49,18 +49,28 @@ class UserController extends BaseController
         $address=$_POST['address'];
         $phone=$_POST['phone'];
         $isadmin=(isset($_POST['admin']))?1:0;
+
         $pdo = getConnection();
         if (isset($_POST['id'])) {
+            $password=(($_POST['password'])!="")?md5($_POST['password']):"";
             $id = $_POST['id'];
-            $query = "UPDATE users SET name=:name,email=:email,address=:address,phone=:phone,isadmin=:isadmin WHERE id=:id";
-            $stmt = $pdo->prepare($query);
-            $stmt->execute(["id" => $id, "name" => $name, "email" => $email, "address" => $address, "phone" => $phone, "isadmin" => $isadmin]);
+            if ($password!="") {
+                $query = "UPDATE users SET name=:name,email=:email,address=:address,phone=:phone,isadmin=:isadmin, password=:password WHERE id=:id";
+                $stmt = $pdo->prepare($query);
+                $stmt->execute(["password" => $password,"id" => $id, "name" => $name, "email" => $email, "address" => $address, "phone" => $phone, "isadmin" => $isadmin]);
+            } else {
+                $query = "UPDATE users SET name=:name,email=:email,address=:address,phone=:phone,isadmin=:isadmin WHERE id=:id";
+                $stmt = $pdo->prepare($query);
+                $stmt->execute(["id" => $id, "name" => $name, "email" => $email, "address" => $address, "phone" => $phone, "isadmin" => $isadmin]);
+
+            }
+
 
         } else{
-
-            $query = "INSERT INTO users SET name=:name,email=:email,address=:address,phone=:phone,isadmin=:isadmin";
+            $password=md5($_POST['password']);
+            $query = "INSERT INTO users SET name=:name,email=:email,address=:address,phone=:phone,isadmin=:isadmin, password=:password ";
             $stmt = $pdo->prepare($query);
-            $stmt->execute(["name" => $name, "email" => $email, "address" => $address, "phone" => $phone, "isadmin" => $isadmin]);
+            $stmt->execute(["password" => $password,"name" => $name, "email" => $email, "address" => $address, "phone" => $phone, "isadmin" => $isadmin]);
 
 
         }
