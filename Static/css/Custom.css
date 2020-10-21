@@ -53,6 +53,13 @@ nav ul li a:hover {
     text-decoration: none;
 }
 
+nav ul a span {
+    color: #0D1F2D;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+
 nav a::before {
     content: '';
     display: block;

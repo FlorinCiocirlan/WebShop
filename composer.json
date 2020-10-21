@@ -2,6 +2,9 @@
     "require": {
         "phpmailer/phpmailer": "^6.1",
         "mpdf/mpdf": "^8.0",
-        "paypal/paypal-checkout-sdk": "1.0.1"
+        "paypal/paypal-checkout-sdk": "1.0.1",
+      "ext-pdo": "*",
+      "ext-json": "*"
+
     }
 }

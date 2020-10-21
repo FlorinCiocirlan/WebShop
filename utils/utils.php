@@ -1,7 +1,16 @@
 <?php
     require 'DbConfig.php';
 session_start();
+setCartCookies();
 
+
+function setCartCookies(){
+    $id = $_SESSION['userID'] ?? '0';
+    $cart = [];
+    if (!isset($_COOKIE['cart']) && !isset($_SESSION['userID'])){
+        setcookie('cart', json_encode($cart), time()+3600);
+    }
+}
 
 function getConnection():PDO{
 
@@ -175,8 +184,47 @@ function getByID(PDO $pdo, int $id){
     return  $stmt->fetchAll();
 }
 
+function getCartByID(){
+    $pdo = getConnection();
+    $id = $_SESSION['userID'] ?? '-1';
+    $stmt = $pdo->prepare("SELECT c.id FROM cart c WHERE user_id=:id");
+    $stmt->execute(['id' => $id]);
+    return  $id;
+}
+
 function deleteCartItem(PDO $pdo, $productId, $cartId){
     $stmt = $pdo->prepare("DELETE FROM cart_product WHERE cart_id=:cartId AND product_id=:productId");
     $stmt->execute(['cartId' => $cartId, 'productId' => $productId]);
+}
+
+function addCartItem(PDO $pdo, $productId, $cartId, $qty){
+    $stmt = $pdo->prepare("SELECT * FROM cart_product WHERE product_id=:productId AND cart_id=:cartId");
+    $stmt->execute(['productId' => $productId, 'cartId' => $cartId]);
+    $valueExists = $stmt->fetch(PDO::FETCH_ASSOC);
+    if (!$valueExists){
+        $stmt = $pdo->prepare("INSERT INTO cart_product (cart_id, product_id, quantity) VALUES (:cartId, :productId, :qty )");
+        $stmt->execute(['cartId' => $cartId, 'productId' => $productId, 'qty' => $qty]);
+    } else {
+        $stmt = $pdo->prepare("UPDATE cart_product SET quantity=quantity + :qty WHERE cart_id=:cartId AND product_id=:productId");
+        $stmt->execute([ 'qty' => $qty, 'cartId' => $cartId, 'productId' => $productId]);
+    }
+}
+
+function getProductById(PDO $pdo, $productId){
+    $stmt = $pdo->prepare("SELECT id as productId, name, price FROM product WHERE id=:productId");
+    $stmt->execute(['productId' => $productId]);
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+function mergeCookieToDBCart(){
+    $cookieCart = json_decode($_COOKIE['cart'], true);
+    $pdo = getConnection();
+    $cartId = getCartByID();
+    foreach ($cookieCart as $product){
+        $productId = (int)$product['productId'];
+        $qty = (int)$product['prodQty'];
+        addCartItem($pdo, $productId, $cartId, $qty );
+    }
+    setcookie('cart', '', time() - 3600);
 }
 

@@ -10,10 +10,9 @@ class ProductController extends BaseController
     {
         $product = $this->getProduct();
 
-      $random = $this->getRandomProduct($product);
+        $random = $this->getRandomProduct($product);
 
         $this->templateData['prod'] =['prod'=>$product, 'rand'=> $random ];
-
         return "product";
 
     }
@@ -32,7 +31,7 @@ class ProductController extends BaseController
         //echo ($query);
         $statement = $connection->prepare($query);
         $statement->execute();
-        $resultset = $statement->fetch();
+        $resultset = $statement->fetch(PDO::FETCH_ASSOC);
         return $resultset;
     }
     public function getRandomProduct($prod):array

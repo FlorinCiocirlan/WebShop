@@ -3,6 +3,7 @@
 <html lang="en">
 
 <?php require "../layout/header.php"?>
+
 <div class="container">
 <div>  <h1 style="text-align: center"> <?= $prod['prod']['name'] ?>   </h1>   <br></div><br><hr class="my-4"><br>
     <div class="row">
@@ -30,9 +31,16 @@
                 $color = 'orange';
                 $stock = 'last product in stock';
             } ?>
-            <h5 class="card-text" style=" color: <?=$color ?>"><?=$stock ?>  </h5>
-            <a class="btn btn-lg" style="background-color: #FAE1DF;color: black;" href="#">Add to cart</a>
-
+            <?=
+            '<h5 class="card-text" style=" color: <?=$color ?>"><?=$stock ?>  </h5>
+            <span class="js-product">
+                <a class="btn btn-lg js-add-product"
+                   data-url = "cart.php"
+                   data-product-id = '. $prod['prod']['id'] .'
+                   data-action = "add"
+                   style="background-color: #FAE1DF;color: black;" href="#">Add to cart</a>
+               </span>'
+            ?>
         </div>
     </div>
 </div>
@@ -62,8 +70,11 @@
 </div>
 </div>
 
-<?php require "../layout/footer.php"?>
-</html>
+<?php require "../layout/footer.php" ?>
+
+<script>
+    <?php require "../Static/js/product.js" ?>
+</script></html>
 
 
 

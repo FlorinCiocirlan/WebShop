@@ -18,10 +18,27 @@
                     echo '
                     <li><a href="#">Home</a></li>
                     <li><a href="products.php">Products</a></li>
-                    <li><a href="login.php">Login</a></li>
-                    <li><a href="register.php">Register</a></li>';
+                    <li><a href="cart.php">Cart</a></li>
+  
+                    <li style="cursor: pointer"
+                        id="dropdownMenuButton" data-toggle="dropdown" 
+                        aria-haspopup="true" aria-expanded="false">
+                        <a>
+                            My Account<i class="fa fa-caret-down" style="position: absolute; margin-left: 3px"></i>
+                        </a>
+                    </li>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="login.php"><span>Login</span></a>
+                        <a class="dropdown-item" href="register.php"><span>Register</span></a>    
+                    </div>
+                    
+                    
+                    ';
+
     } ?>
             </ul>
         </nav>
     </div>
 </header>
+
+
