@@ -41,7 +41,7 @@
         <tr>
             <td>&nbsp;</td>
             <th>Total</th>
-            <th class="js-total-price"><?= $this->templateData['sum'] ?></th>
+            <th class="js-total-price"><?= $this->templateData['sum'] ?>$</th>
             <td>&nbsp;</td>
         </tr>
         </tfoot>

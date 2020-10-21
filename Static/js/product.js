@@ -27,7 +27,7 @@
                         console.log(parseInt($totalPriceContainer.html()));
                         console.log($row.data('price'));
                         console.log(newPrice);
-                        $totalPriceContainer.html(newPrice);
+                        $totalPriceContainer.html(newPrice + '$');
                         console.log($data);
                     }
                 })

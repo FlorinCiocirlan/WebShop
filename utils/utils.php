@@ -186,7 +186,7 @@ function getByID(PDO $pdo, int $id){
 
 function getCartByID(){
     $pdo = getConnection();
-    $id = $_SESSION['userID'] ?? '0';
+    $id = $_SESSION['userID'] ?? '-1';
     $stmt = $pdo->prepare("SELECT c.id FROM cart c WHERE user_id=:id");
     $stmt->execute(['id' => $id]);
     return  $id;

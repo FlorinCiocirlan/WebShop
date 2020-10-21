@@ -25,9 +25,10 @@ class User{
 
     public function checkIfLoggedIn():void{
 
-        if (!isset($this->id))
+        if (!isset($this->id)) {
             header("Location: ../shop/login.php");
             exit();
+        }
     }
     public function checkIfLoggedInAsAdmin():void{
 
