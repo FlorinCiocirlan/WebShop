@@ -179,17 +179,25 @@ function getByID(PDO $pdo, int $id){
                                 on c.id = cp.cart_id
                                 left join product p
                                 on cp.product_id = p.id
-                                WHERE c.user_id=:id");
-    $stmt->execute(['id' => $id]);
+                                WHERE c.user_id=:id
+                                AND c.status=:status");
+    $stmt->execute(['id' => $id, 'status' => 'active']);
     return  $stmt->fetchAll();
 }
 
 function getCartByID(){
     $pdo = getConnection();
     $id = $_SESSION['userID'] ?? '-1';
-    $stmt = $pdo->prepare("SELECT c.id FROM cart c WHERE user_id=:id");
-    $stmt->execute(['id' => $id]);
-    return $stmt->fetch()[0];
+    $stmt = $pdo->prepare("SELECT c.id FROM cart c WHERE user_id=:id AND status=:status");
+    $stmt->execute(['id' => $id, 'status' => 'active']);
+    $result = $stmt->fetch();
+    if (($id !== '-1') && ($result === false)) {
+        $newStmt = $pdo->prepare("INSERT INTO cart (status, user_id) VALUES (:status, :userId)");
+        $newStmt->execute(['status' => 'active', 'userId' => $id]);
+        return $pdo->lastInsertId();
+    }
+
+    return $result[0];
 }
 
 function deleteCartItem(PDO $pdo, $productId, $cartId){

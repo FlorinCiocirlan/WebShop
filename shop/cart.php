@@ -36,6 +36,7 @@ class CartController extends BaseController{
 
     public function handlePost(): string
     {
+        var_dump(getCartByID());
         if ($_REQUEST['action'] === 'delete') {
             if(isset($_SESSION['userID'])) {
                 $pdo = getConnection();
