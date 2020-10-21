@@ -1,8 +1,16 @@
+<?php require "../layout/header.php"?>
 
 <!doctype html>
 <html lang="en">
-<?php require "../layout/header.php"?>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script type="text/javascript" src="../../Static/js/checkout.js" defer></script>
+</head>
 <div class="container mt-3">
     <div class="row">
     <div class="col-md-4 order-md-1 mb-4">
@@ -31,12 +39,16 @@
         <label for="payment"> Payment</label>
         <div class="form-group">
         <select class="form-control form-control-sm" id="payment" name="payment" required>
-            <option name="cash">Cash</option>
+            <option id="cash-payment" name="cash" selected>Cash</option>
+            <option id="paypal-payment" name="paypal">PayPal</option>
         </select>
         </div>
         <hr class="mb-4">
         <input type="text" value="<?=$products[0]['cart_id'] ?>" name="cart_id" hidden>
-        <button class="btn btn-sm btn-block" type="submit" style="background-color: #546A7B;color:white">Place Order</button>
+        <div style="display: none" id="paypal-button-container">
+
+        </div>
+        <button id="continue-button" class="btn btn-sm btn-block" type="submit" style="background-color: #546A7B;color:white">Continue</button>
     </form>
     </div>
     <div class="col-md-8 order-md-2">
@@ -64,12 +76,15 @@
          }
          echo '<li class="list-group-item d-flex justify-content-between">
                     <span>Total (USD)</span>
-                    <strong> '.'$'.$total.'</strong>
+                    <strong id="amount"> '.'$'.$total.'</strong>
              </li>';
          echo '</ul>';
+
+         echo '<div class="text-center text-success modal-container"></div>';
         ?>
     </div>
     </div>
+        <script src="https://www.paypal.com/sdk/js?client-id=AXfgE1YbXNIaXGkEEV0RS6imDZlNQCA5Ain1g-Yv2fnS2Lf3WZBccNiBhE8qnwW67v7WhGH7gAv7n2_D&currency=EUR"></script>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

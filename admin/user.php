@@ -57,8 +57,8 @@ class UserController extends BaseController
             $stmt->execute(["id" => $id, "name" => $name, "email" => $email, "address" => $address, "phone" => $phone, "isadmin" => $isadmin]);
 
         } else{
-
-            $query = "INSERT INTO users SET name=:name,email=:email,address=:address,phone=:phone,isadmin=:isadmin";
+            $query = "INSERT INTO users SET name=:name,email=:email, password='', address=:address,phone=:phone,isadmin=:isadmin";
+            var_dump($query);
             $stmt = $pdo->prepare($query);
             $stmt->execute(["name" => $name, "email" => $email, "address" => $address, "phone" => $phone, "isadmin" => $isadmin]);
 
