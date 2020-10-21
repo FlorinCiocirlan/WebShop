@@ -11,14 +11,14 @@ function doRequest(data, callBack ){
 
 }
 
-function getDataCallBack(response){
+function getDataCallBack(response) {
     console.log('call back')
 
     let output = " ";
-    for(let product of response){
+    for (let product of response) {
         let color = 'green';
         let stock = 'in stock';
-        if(product['stock'] <= 0){
+        if (product['stock'] <= 0) {
             color = 'red';
             stock = 'out of stock'
         } else if (product['stock'] === 1) {
@@ -76,6 +76,27 @@ function getDataCallBack(response){
 
     // print data
     document.getElementById("products").innerHTML = output;
+
+    let $product = $('.js-product');
+    $product.find('.js-add-product').on('click', function (e) {
+        e.preventDefault();
+
+        let $deleteUrl = $(this).data('url');
+        let $data = {
+            'action': $(this).data('action'),
+            'productId': $(this).data('product-id')
+        }
+
+        $.ajax(
+            {
+                type: "POST",
+                url: $deleteUrl,
+                data: $data,
+                success: function () {
+                    console.log($data);
+                }
+            })
+    })
 }
 
 function fetchData(cat , pri , alpha){
