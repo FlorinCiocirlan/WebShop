@@ -7,7 +7,7 @@
         public function handleGet(): string
         {
             $this->getUser()->checkIfLoggedIn();
-
+            //var_dump($this->getUser());
             $orders = getOrderByUserId($this->getUser()->getID());
 
             $ordersId = getOrdersIdByUserId($this->getUser()->getID());

@@ -1,7 +1,7 @@
 
 <!doctype html>
 <html lang="en">
-
+<?php require "../layout/header.php"?>
 <?php if(isset($orders)){
         echo '<div class="container">';
         echo '<div class="row">';
@@ -23,7 +23,7 @@
         }
         echo '<ul class="list-group"> <li class="list-group-item">Payment : '.$order[0]['order_payment'].'</li><li class="list-group-item"> Shipping : '.$order[0]['order_delivery'].'</li>'.
             '<li class="list-group-item"> Status : '.$order[0]['order_status'].'</li>'.
-              '<form method="post" action="/shop/order.php">
+              '<form method="post" action="../shop/order.php">
                 <button style="background-color: #E4C3AD; color: black;" class="btn btn-sm" type="submit" name="orderID" value="'.$order[0]['order_id'].'">Download Receipt</button>
                 </form>';
             '</ul>';

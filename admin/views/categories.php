@@ -24,27 +24,21 @@
     <table cellpadding="10" align="center">
         <tr>
             <th>Name</th>
-            <th>Email</th>
-            <th>Address</th>
-            <th>Phone</th>
-            <th>Administrator</th>
+            <th>Description</th>
             <th>Edit</th>
             <th>(Un)Delete</th>
         </tr>
 
         <?php
-        foreach ($users as $user):
-        ?>
-        <tr>
-            <td><?=$user['name'] ?></td>
-            <td><?=$user['email'] ?></td>
-            <td><?=$user['address'] ?></td>
-            <td><?=$user['phone'] ?></td>
-            <td><?=$user['isadmin'] ?></td>
-            <td><a href="user.php?id=<?=$user['id'] ?>" >Edit</a></td>
-            <td><?=$user['deleted'] ?></td>
+        foreach ($categories as $category):
+            ?>
+            <tr>
+                <td><?=$category['name'] ?></td>
+                <td><?=$category['description'] ?></td>
+                <td><a href="category.php?id=<?=$category['id'] ?>" >Edit</a></td>
+                <td><?=$category['deleted'] ?></td>
 
-        </tr>
+            </tr>
 
         <?php
         endforeach;
@@ -61,7 +55,7 @@
 </div>
 
 <?php
-paging("users", TRUE);
+paging("category", TRUE);
 ?>
 </body>
 </html>

@@ -8,6 +8,7 @@ class ProductsController extends BaseController
 
     public function handleGet(): string
     {
+        //var_dump($this->getUser());
 
         $products = $this->getAllProducts();
         $this->templateData['prod'] = [ "prod"=>$products];
