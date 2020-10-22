@@ -3,6 +3,12 @@
 session_start();
 setCartCookies();
 
+function updateProductStock(int $productID, int $quantity){
+    $conn = getConnection();
+    $query = "UPDATE product SET stock=stock-:quantity WHERE id=:productID";
+    $stmt = $conn->prepare($query);
+    return $stmt->execute([':quantity'=>$quantity,':productID'=>$productID]);
+}
 
 function setCartStatusById(int $cartID, string $status){
     $conn = getConnection();
@@ -123,7 +129,7 @@ function getCartDetails(int $userID){
        p.name as product_name,
        p.category_name as product_category,
        p.description as product_description, p.brand as product_brand, p.price as product_price, p.image as product_image
-        FROM cart JOIN cart_product cp on cart.id = cp.cart_id JOIN product p on cp.product_id = p.id  WHERE user_id=:userID;';
+        FROM cart JOIN cart_product cp on cart.id = cp.cart_id JOIN product p on cp.product_id = p.id  WHERE user_id=:userID AND status="active";';
     $stmt = $pdo->prepare($query);
     $stmt->execute([':userID'=>$userID]);
     return $stmt->fetchAll();
