@@ -7,9 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <title>Document</title>
+    <?php require "../layout/header.php"?>
 </head>
 <body>
-    <h1> Profile information </h1>
+<br>
+    <h1 style="text-align: center"> Profile information </h1>
+<br>  <hr class="m-4">  <br>
     <div class="container">
         <div class="card">
             <br>
@@ -30,15 +33,16 @@ s                    <label for="validationTextarea">Address</label>
                     <div class="valid-feedback">
                         Please enter a phone number in the textarea.
                     </div>
-                </div>
-                <input type="submit" class="btn btn-warning" value="Change">
+                </div>  <br>
+                <input type="submit" style="background-color: #0D1F2D; color: white;" class="btn " value="Change">
 
             </form><br>
             <hr class="m-4">
-            <h2> Role : <?php if($prod['prod']['isadmin'] == 0){echo 'Active member';}else{echo 'Admin';}?></h2>
+            <h2>   Role : <?php if($prod['prod']['isadmin'] == 0){echo 'Active member';}else{echo 'Admin';}?></h2>
         </div>
     </div>
 </body>
+<?php require "../layout/footer.php" ?>
 </html>
 
 
