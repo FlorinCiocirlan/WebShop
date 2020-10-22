@@ -229,3 +229,24 @@ function mergeCookieToDBCart(){
     setcookie('cart', '', time() - 3600);
 }
 
+function getCommentsForProductId($prodId){
+    $pdo = getConnection();
+    $stmt = $pdo->prepare("SELECT r.id, r.comment, r.title,r.createdAt as datetime, r.editedAt, 
+                                            r.parentId, r.prodId, p.name, u.name as username, u.avatar
+                                    FROM review r
+                                    LEFT JOIN users u
+                                    ON r.userID = u.id
+                                    LEFT JOIN product p
+                                    ON r.prodId = p.id
+                                    WHERE r.prodId=:prodId");
+    $stmt->execute(['prodId' => $prodId]);
+    $result = $stmt->fetchAll(PDO::FETCH_OBJ);
+
+    $comments = [];
+
+    foreach ($result as $row){
+        $comments[$row->parentId][] = $row;
+    }
+    return $comments;
+}
+

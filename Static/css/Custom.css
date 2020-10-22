@@ -184,3 +184,8 @@ nav a:hover::before{
     padding-bottom: 20rem;    /* Footer height */
 }
 
+.avatar {
+    margin: 10px;
+    width: 20px;
+    border-radius: 50%;
+}
