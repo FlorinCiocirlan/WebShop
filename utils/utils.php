@@ -4,6 +4,13 @@ session_start();
 setCartCookies();
 
 
+function setCartStatusById(int $cartID, string $status){
+    $conn = getConnection();
+    $query = "UPDATE cart SET status=:status WHERE id=:cartID";
+    $stmt = $conn->prepare($query);
+    $stmt->execute([':status'=>$status,':cartID'=>$cartID]);
+}
+
 function setCartCookies(){
     $id = $_SESSION['userID'] ?? '0';
     $cart = [];
