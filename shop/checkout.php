@@ -46,6 +46,7 @@
                 $orderDetails['status'] = 'placed';
             }
             addOrder($orderDetails);
+            setCartStatusById((int) $_POST['cart_id'], 'Completed');
 
             $emailOrderDetails = getCartDetails($this->getUser()->getID());
 
