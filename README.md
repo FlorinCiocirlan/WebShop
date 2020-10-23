@@ -1,4 +1,4 @@
 # WebShop
 
-##Features
- *** Register/Login - contrib. Florin
+## Features
+ **Register/Login - contrib. Florin
