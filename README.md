@@ -3,7 +3,7 @@
 ## Features
 * Admin
  * CRUD
-  * contrib. Florin, Stefan, Adrian
+ * contrib. Florin, Stefan, Adrian
 * Customer
  * Register/Login (md5)
   * contrib. Florin
