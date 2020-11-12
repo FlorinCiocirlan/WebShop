@@ -3,6 +3,28 @@
 session_start();
 setCartCookies();
 
+function updatePassword(string $email , string $password){
+    $conn = getConnection();
+    $query = "UPDATE users SET password=:password WHERE email=:email";
+    $stmt = $conn->prepare($query);
+    return $stmt->execute([':password'=>$password,':email'=>$email]);
+}
+
+function addResetLink(string $userEmail, string $resetLink){
+    $conn = getConnection();
+    $query = "UPDATE users SET reset_link = :resetLink WHERE email=:email";
+    $stmt = $conn->prepare($query);
+    return $stmt->execute([':resetLink'=>$resetLink,':email'=>$userEmail]);
+}
+
+function addResetTimestamp(string $userEmail, string $timestamp){
+    $conn = getConnection();
+    $query = "UPDATE users SET reset_date = :resetDate WHERE email=:email";
+    $stmt = $conn->prepare($query);
+    return $stmt->execute([':resetDate'=>$timestamp,':email'=>$userEmail]);
+}
+
+
 function updateProductStock(int $productID, int $quantity){
     $conn = getConnection();
     $query = "UPDATE product SET stock=stock-:quantity WHERE id=:productID";
@@ -30,7 +52,7 @@ function getConnection():PDO{
     $credentials = getCredentials();
     $db_username = $credentials['username'];
     $db_password=$credentials['password'];
-    $db_name='webshop';
+    $db_name='eturia';
     $db_server="localhost:".$credentials['port'];
 
     return new PDO("mysql:host=$db_server;dbname=$db_name",$db_username,$db_password);
