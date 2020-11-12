@@ -30,7 +30,7 @@
         <label for="">New Here ? <a href="register.php">Sign Up </a></label>
     </div>
     <div class="form-group">
-        <label> <a href="reset.php">forgot password ?</a></label>
+        <label> <a href="requestReset.php">forgot password ?</a></label>
     </div>
     <button type="submit" class="btn btn-sm" style="background-color: #9EA3B0; color: black;">Sign In</button>
     <?php
