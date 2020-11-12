@@ -17,8 +17,8 @@
     <button type="submit" name="submit" class="btn btn-sm btn-info"> Reset Password</button>
 </form>
 <?php
- if(isset($feedback)){
-     echo '<div><p class="text-success text-center">'.$feedback.'</p></div>';
+ if(isset($feedback) & isset($color)){
+     echo '<div><p class="text-center '.$color.'">'.$feedback.'</p></div>';
  }
 ?>
 </body>

@@ -34,6 +34,7 @@
 
                 sendEmail($userEmail, 'Your password reset link', $emailTemplate);
                 $this->templateData['feedback'] = "We have sent you an email with the reset link.";
+                $this->templateData['color'] = "text-success";
                 return 'requestReset';
             } else {
                 $this->templateData['feedBack'] = "You don't have an account";
