@@ -6,7 +6,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script type="text/javascript" src="../../Static/js/reset.js" defer></script>
+    <script type="text/javascript" src="../../Static/js/register.js" defer></script>
     <title>Reset</title>
 </head>
 <body>
@@ -17,7 +17,8 @@
     <label for="confirmPassword">Confirm Password</label>
     <input type="password" name="confirmPassword" id="confirmPassword" class="form-control">
     </div>
-    <button type="submit" class="btn btn-sm btn-info">Save</button>
+    <input type="hidden" value="<?php if(isset($email)){echo $email;}?>" name="email">
+    <button type="submit" name="submit" id="submitBtn" class="btn btn-sm btn-info">Save</button>
 </form>
 </body>
 <?php require "../layout/footer.php" ?>

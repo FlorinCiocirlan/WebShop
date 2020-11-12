@@ -16,6 +16,7 @@
                 $this->templateData['color'] = "text-danger";
                 return 'requestReset';
             } else {
+                $this->templateData['email'] = $encryptedEmail;
                 return 'reset';
             }
         }
@@ -24,7 +25,12 @@
 
         public function handlePost(): string
         {
-            // TODO: Implement handlePost() method.
+            $email = decrypt($_POST['email']);
+            $password = md5($_POST['password']);
+            updatePassword($email,$password);
+            $this->templateData['feedBack'] = "You have successfully reset your password";
+            $this->templateData['color'] = "green";
+            return 'login';
         }
     }
 

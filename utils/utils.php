@@ -3,6 +3,12 @@
 session_start();
 setCartCookies();
 
+function updatePassword(string $email , string $password){
+    $conn = getConnection();
+    $query = "UPDATE users SET password=:password WHERE email=:email";
+    $stmt = $conn->prepare($query);
+    return $stmt->execute([':password'=>$password,':email'=>$email]);
+}
 
 function addResetLink(string $userEmail, string $resetLink){
     $conn = getConnection();
