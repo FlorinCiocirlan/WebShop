@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.22, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.20, for macos10.15 (x86_64)
 --
--- Host: 127.0.0.1    Database: webshop
+-- Host: 127.0.0.1    Database: eturia
 -- ------------------------------------------------------
--- Server version	8.0.22
+-- Server version	8.0.21
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -162,6 +162,8 @@ CREATE TABLE `users` (
   `phone` varchar(30) DEFAULT NULL,
   `deleted` tinyint NOT NULL DEFAULT '0',
   `isadmin` tinyint NOT NULL DEFAULT '0',
+  `reset_date` varchar(255) DEFAULT NULL,
+  `reset_link` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -172,7 +174,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'adamalt@gmail.com','4802896f5255cfc05771b1c5fe283df8','Adam','aleea Popescu Petrescu nr 12','+40756898989        ',0,1),(2,'pogar.adi@gmail.com','81dc9bdb52d04dc20036dbd8313ed055',' Adrian','o adresa','0774078644',0,0),(3,'pogar@yahoo.com','c4ca4238a0b923820dcc509a6f75849b',NULL,NULL,NULL,0,0);
+INSERT INTO `users` VALUES (1,'adamalt@gmail.com','4802896f5255cfc05771b1c5fe283df8','Adam','aleea Popescu Petrescu nr 12','+40756898989        ',0,1,NULL,NULL),(2,'pogar.adi@gmail.com','81dc9bdb52d04dc20036dbd8313ed055',' Adrian','o adresa','0774078644',0,0,NULL,NULL),(3,'pogar@yahoo.com','c4ca4238a0b923820dcc509a6f75849b',NULL,NULL,NULL,0,0,NULL,NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -185,4 +187,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-10-21 16:11:31
+-- Dump completed on 2020-11-12 18:12:04
