@@ -28,6 +28,8 @@
             $email = decrypt($_POST['email']);
             $password = md5($_POST['password']);
             updatePassword($email,$password);
+            addResetTimestamp($email,'');
+            addResetLink($email,'');
             $this->templateData['feedBack'] = "You have successfully reset your password";
             $this->templateData['color'] = "green";
             return 'login';
