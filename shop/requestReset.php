@@ -22,7 +22,7 @@
         public function handleGet(): string
         {
 //            if (!$this->getUser()->isLoggedIn()) {
-                return 'requestReset';
+            return 'requestReset';
 //            } else {
 //                header('Location: products.php');
 //                exit();

@@ -1,25 +1,39 @@
 <?php
     require_once '../Core/basecontroller.php';
     require_once '../Core/encryption.php';
+    require_once 'services/UserService.php';
 
-    class ResetController extends BaseController{
+    use App\Services\UserService\UserService;
+
+    class ResetController extends BaseController
+    {
+        private UserService $userService;
+
+        function __construct()
+        {
+            $this->userService = new UserService();
+        }
 
         public function handleGet(): string
         {
-            $encryptedEmail = $_GET['email'];
-            $plainEmail = decrypt($encryptedEmail);
-            $encryptedTime = $_GET['time'];
-            $plainTime = decrypt($encryptedTime);
-            $user = getUserByEmail($plainEmail);
-            if((time() - $plainTime) > 3600 || $user['reset_link'] !== "http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}"){
+            $token = explode('__', decrypt($_GET['token']));
+            $email = $token[0];
+            $time = $token[1];
+            $user = $this->userService->fetchByEmail($email);
+            if (!$this->userService->checkResetLink($user->getResetLink()) || !$this->userService->checkResetTime(
+                    $time
+                )) {
                 $this->templateData['feedback'] = "You have a non valid reset link";
                 $this->templateData['color'] = "text-danger";
+
                 return 'requestReset';
             } else {
-                $this->templateData['email'] = $encryptedEmail;
+                $this->templateData['email'] = encrypt($email);
+
                 return 'reset';
             }
         }
+
 //
 
 
@@ -27,11 +41,13 @@
         {
             $email = decrypt($_POST['email']);
             $password = md5($_POST['password']);
-            updatePassword($email,$password);
-            addResetTimestamp($email,'');
-            addResetLink($email,'');
+            $this->userService->updateByEmail(
+                $email,
+                ["password" => $password, "reset_link" => '', "updated" => time()]
+            );
             $this->templateData['feedBack'] = "You have successfully reset your password";
             $this->templateData['color'] = "green";
+
             return 'login';
         }
     }
