@@ -34,15 +34,14 @@
             $conn = $this->getConnection();
             $query = "SELECT * FROM :table WHERE :column = :value";
             $stmt = $conn->prepare($query);
-            $stmt->execute([':table' => $table, ':column' => $column, ':value' => $value]);
-            $result = $stmt->fetch(PDO::FETCH_ASSOC);
-            $model = new $this->modelClass();
+            $stmt->execute([':table' => $this->table, ':column' => $column, ':value' => $value]);
+//            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+//            $model = new $this->modelClass();
+            //            Implement model setters;
 
 
-//            Implement model setters;
 
-
-            return $model;
+            return $stmt->fetchObject($this->modelClass);
         }
 
         private function getConnection(): PDO

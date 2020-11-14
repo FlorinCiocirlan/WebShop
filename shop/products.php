@@ -9,6 +9,7 @@ class ProductsController extends BaseController
     public function handleGet(): string
     {
 
+        var_dump($_ENV);
         $products = $this->getAllProducts();
         $this->templateData['prod'] = [ "prod"=>$products];
         $this->templateData['categ'] = $this->getCategory();

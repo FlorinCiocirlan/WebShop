@@ -49,8 +49,8 @@ function setCartCookies(){
 
 function getConnection():PDO{
 
-    $credentials = getCredentials();
-    $db_username = $credentials['username'];
+//    $credentials = getCredentials();
+    $db_username = $_ENV[''];
     $db_password=$credentials['password'];
     $db_name='eturia';
     $db_server="localhost:".$credentials['port'];

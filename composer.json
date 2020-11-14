@@ -5,6 +5,7 @@
         "paypal/paypal-checkout-sdk": "1.0.1",
       "ext-pdo": "*",
       "ext-json": "*",
-      "ext-openssl": "*"
+      "ext-openssl": "*",
+        "vlucas/phpdotenv": "^5.2"
     }
 }
