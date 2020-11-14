@@ -7,6 +7,7 @@
 
 // Load Composer's autoloader
     require '../vendor/autoload.php';
+    require_once '../config.php';
 
 // Instantiation and passing `true` enables exceptions
     function sendEmail(string $receiver, string $subject, string $message)
@@ -15,17 +16,17 @@
 
         try {
             //Server settings
-            $mail->SMTPDebug = 0;                      // Enable verbose debug output
+            $mail->SMTPDebug = $_ENV['APP_MAILER_DEBUG'];                      // Enable verbose debug output
             $mail->isSMTP();                                            // Send using SMTP
-            $mail->Host = 'smtp.gmail.com';                    // Set the SMTP server to send through
-            $mail->SMTPAuth = true;                                   // Enable SMTP authentication
-            $mail->Username = 'codecoolerbook@gmail.com';                     // SMTP username
-            $mail->Password = 'codecoolerbook123';                               // SMTP password
+            $mail->Host = $_ENV['APP_MAILER_HOST'];                    // Set the SMTP server to send through
+            $mail->SMTPAuth = $_ENV['APP_MAILER_SMTPAUTH'];                                   // Enable SMTP authentication
+            $mail->Username = $_ENV['APP_MAILER_USERNAME'];                     // SMTP username
+            $mail->Password = $_ENV['APP_MAILER_PASSWORD'];                               // SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
-            $mail->Port = 587;                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+            $mail->Port = $_ENV['APP_MAILER_PORT'];                                    // TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
             //Recipients
-            $mail->setFrom('CodecoolShop@codecool.com', 'WebShop');
+            $mail->setFrom($_ENV['APP_MAILER_FROM'], $_ENV['APP_MAILER_FROM_NAME']);
             $mail->addAddress($receiver);     // Add a recipient
 
             // Content

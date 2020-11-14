@@ -47,16 +47,16 @@ function setCartCookies(){
     }
 }
 
-function getConnection():PDO{
-
-//    $credentials = getCredentials();
-    $db_username = $_ENV[''];
-    $db_password=$credentials['password'];
-    $db_name='eturia';
-    $db_server="localhost:".$credentials['port'];
-
-    return new PDO("mysql:host=$db_server;dbname=$db_name",$db_username,$db_password);
-}
+//function getConnection():PDO{
+//
+////    $credentials = getCredentials();
+//    $db_username = $_ENV[''];
+//    $db_password=$credentials['password'];
+//    $db_name='eturia';
+//    $db_server="localhost:".$credentials['port'];
+//
+//    return new PDO("mysql:host=$db_server;dbname=$db_name",$db_username,$db_password);
+//}
 
 function registerUser(string $email , string $password){
     if(getUserByEmail($email)){

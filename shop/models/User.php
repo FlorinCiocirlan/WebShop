@@ -5,15 +5,15 @@
     {
         private int $id;
         private string $email;
-        private string $name;
+        private ?string $name;
         private string $password;
-        private string $address;
-        private string $phone;
+        private ?string $address;
+        private ?string $phone;
         private bool $is_admin;
         private bool $deleted;
-        private string $reset_link;
-        private string $updated;
-        private string $created;
+        private ?string $reset_link;
+        private ?string $updated;
+        private ?string $created;
 
         /**
          * @return int

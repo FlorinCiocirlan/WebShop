@@ -1,7 +1,9 @@
 <?php
+    namespace App\Services\UserService;
+    require_once '../Core/ORM.php';
+    require_once 'models/User.php';
 
-    require_once 'Core/ORM.php';
-    require_once '../models/User.php';
+    use App\Core\ORM\ORM;
 
     class UserService extends ORM
     {
