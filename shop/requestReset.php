@@ -21,12 +21,7 @@
 
         public function handleGet(): string
         {
-//            if (!$this->getUser()->isLoggedIn()) {
             return 'requestReset';
-//            } else {
-//                header('Location: products.php');
-//                exit();
-//            }
         }
 
         public function handlePost(): string

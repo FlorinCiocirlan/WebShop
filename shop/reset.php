@@ -16,9 +16,9 @@
 
         public function handleGet(): string
         {
-            $token = explode('__', decrypt($_GET['token']));
-            $email = $token[0];
-            $time = $token[1];
+            $token = tokenDecrypt($_GET['token']);
+            $email = $token['email'];
+            $time = $token['timestamp'];
             $user = $this->userService->fetchByEmail($email);
             if (!$this->userService->checkResetLink($user->getResetLink()) || !$this->userService->checkResetTime(
                     $time

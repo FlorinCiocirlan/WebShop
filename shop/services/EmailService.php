@@ -1,13 +1,15 @@
 <?php
     namespace App\Services\EmailService;
     require_once(__DIR__.'../../../Core/Mailer.php');
+    use App\Core\Mailer\Mailer;
 
-    class EmailService
+    class EmailService extends Mailer
     {
 
         public function sendResetPasswordLink(string $email, string $link)
         {
-            sendEmail($email, 'Your reset link', $link);
+            $message = '<div>Here is your reset link <p>'.$link.'</p></div>';
+            $this->sendEmail($email, 'Your reset link', $message);
         }
 
         public function sendConfirmationOrder(array $OrderDetails, array $UserInfoDetails, string $email)
@@ -45,6 +47,7 @@
             $costContent = '<div style="color: black">Total : '.$totalCost.' USD'.'</div>';
             $message = '<div style="background-color:white; font-size: 20px">'.$mailHeader.$emailText.$content.$costContent.$userDetailsContent.'</div>';
 
-            sendEmail($email, "Your order summary", $message);
+            $this->sendEmail($email, 'Your order summary', $message);
+
         }
     }

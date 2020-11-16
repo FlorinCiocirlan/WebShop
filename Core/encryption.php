@@ -21,3 +21,10 @@
 
         return openssl_decrypt($encrypted, $method, $key, $options, $encryption_iv);
     }
+
+    function tokenDecrypt($encrypted)
+    {
+        $decryptedToken = explode('__', decrypt($encrypted));
+
+        return ["email" => $decryptedToken[0], "timestamp" => $decryptedToken[1]];
+    }
