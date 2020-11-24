@@ -22,7 +22,7 @@
                 $creation_date = time();
                 $encryptedEmail = encrypt($userEmail);
                 $encryptedTimestamp = encrypt($creation_date);
-                $resetLink = "http://localhost:8080/shop/reset.php?email=".$encryptedEmail."&time=".$encryptedTimestamp;
+                $resetLink = "http://localhost:8000/shop/reset.php?email=".$encryptedEmail."&time=".$encryptedTimestamp;
                 addResetLink($userEmail,$resetLink);
                 addResetTimestamp($userEmail,$creation_date);
 

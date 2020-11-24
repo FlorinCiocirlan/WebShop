@@ -19,7 +19,7 @@ function addResetLink(string $userEmail, string $resetLink){
 
 function addResetTimestamp(string $userEmail, string $timestamp){
     $conn = getConnection();
-    $query = "UPDATE users SET reset_date = :resetDate WHERE email=:email";
+    $query = "UPDATE users SET updated = :resetDate WHERE email=:email";
     $stmt = $conn->prepare($query);
     return $stmt->execute([':resetDate'=>$timestamp,':email'=>$userEmail]);
 }
