@@ -46,9 +46,9 @@
                 $orderDetails['status'] = 'placed';
             }
             addOrder($orderDetails);
-            setCartStatusById((int) $_POST['cart_id'], 'Completed');
 
             $emailOrderDetails = getCartDetails($this->getUser()->getID());
+            setCartStatusById((int) $_POST['cart_id'], 'Completed');
 
             $emailUserInfoDetails['name'] = $_POST['name'];
             $emailUserInfoDetails['address'] = $_POST['adress'];
@@ -78,6 +78,7 @@
                 <td style="border: 1px solid darkgrey;">'.$product['product_price'].' USD'.'</td>
                             </tr>';
             }
+
             $content .= '</table>';
 
             $userDetailsContent = '<div style="background-color: white;color: black;border: 1px solid darkgrey;font-size: 16px; padding-top:20px;">
